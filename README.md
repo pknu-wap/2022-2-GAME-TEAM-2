@@ -1,2 +1,2 @@
 # 2022-2-GAME-TEAM-2
-전의 것이 터져서 새로만듭니다.
+2D Top-Down Horror-Game
