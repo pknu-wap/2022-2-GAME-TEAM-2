@@ -9,7 +9,6 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
     
-    
     #region Singleton
     private void Awake()
     {
@@ -77,7 +76,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i]; // 한글자 씩 출력.
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
     public void ExitDialogue()
@@ -94,24 +93,23 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (talking && keyActivated)
+        if (!talking || !keyActivated) return;
+
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            keyActivated = false;
+            count++;
+            text.text = "";
+
+            if (count == listSentences.Count)
             {
-                keyActivated = false;
-                count++;
-                text.text = "";
-                
-                if (count == listSentences.Count)
-                {
-                    StopAllCoroutines();
-                    ExitDialogue();
-                }
-                else
-                {
-                    StopAllCoroutines();
-                    StartCoroutine(StartTextCoroutine());
-                }
+                StopAllCoroutines();
+                ExitDialogue();
+            }
+            else
+            {
+                StopAllCoroutines();
+                StartCoroutine(StartTextCoroutine());
             }
         }
     }
