@@ -61,13 +61,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isPause && (Input.GetAxisRaw("Horizontal") != 0|| Input.GetAxisRaw("Vertical") != 0) && _bCanMove)
+        if (isPause) return;
+        
+        if ((Input.GetAxisRaw("Horizontal") != 0|| Input.GetAxisRaw("Vertical") != 0) && _bCanMove)
         {
             _bCanMove = false;
             StartCoroutine(PlayerMoveCoroutine());
         }
-        
-        //flashLight.gameObject.transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
     }
 
     IEnumerator PlayerMoveCoroutine()

@@ -194,7 +194,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &8810885723389869150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -299,11 +299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7870563279702410270, guid: b6703187599b8b849b59d8091692a45d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7870563279702410270, guid: b6703187599b8b849b59d8091692a45d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.32999998
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7870563279702410270, guid: b6703187599b8b849b59d8091692a45d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -336,6 +336,26 @@ PrefabInstance:
     - target: {fileID: 7870563279702410270, guid: b6703187599b8b849b59d8091692a45d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870563279702410271, guid: b6703187599b8b849b59d8091692a45d, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870563279702410271, guid: b6703187599b8b849b59d8091692a45d, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870563279702410271, guid: b6703187599b8b849b59d8091692a45d, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: -980202173
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870563279702410271, guid: b6703187599b8b849b59d8091692a45d, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: -1109366389
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870563279702410271, guid: b6703187599b8b849b59d8091692a45d, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: -2137035405
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6703187599b8b849b59d8091692a45d, type: 3}

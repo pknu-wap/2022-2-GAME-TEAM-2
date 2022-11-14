@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
             else
                 selectedItem = inventoryItemList.Count - 1 - selectedItem;
             theAudio.PlaySFX(key_sound);
-            SelectedItem();
+            HighlightedItem();
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour
             else
                 selectedItem %= 2;
             theAudio.PlaySFX(key_sound);
-            SelectedItem();
+            HighlightedItem();
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
             else
                 selectedItem = inventoryItemList.Count - 1;
             theAudio.PlaySFX(key_sound);
-            SelectedItem();
+            HighlightedItem();
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -75,7 +75,7 @@ public class Inventory : MonoBehaviour
             else
                 selectedItem = 0;
             theAudio.PlaySFX(key_sound);
-            SelectedItem();
+            HighlightedItem();
         }
         else if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -104,10 +104,10 @@ public class Inventory : MonoBehaviour
              slots[i].gameObject.SetActive(true);
              slots[i].AddItem(inventoryItemList[i]);
         }
-        SelectedItem();
+        HighlightedItem();
     }
 
-    private void SelectedItem()
+    private void HighlightedItem()
     {
         if (inventoryItemList.Count > 0)
         {
