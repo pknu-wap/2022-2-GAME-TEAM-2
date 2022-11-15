@@ -1,0 +1,2 @@
+2022-11-15
+아이템 카운트 무조건 하나있는걸로 수정. (클래스 slot, InventoryManager, SLManager, Item 등  수정)
