@@ -72,12 +72,12 @@ public class DialogueManager : MonoBehaviour
     IEnumerator StartTextCoroutine()
     {
         nextDialogue = false;
-        keyActivated = true;
         for (int i = 0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i]; // 한글자 씩 출력.
             yield return new WaitForSeconds(0.05f);
         }
+        keyActivated = true;
     }
     public void ExitDialogue()
     {

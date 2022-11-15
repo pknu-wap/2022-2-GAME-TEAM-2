@@ -31,25 +31,17 @@ public class InventoryManager : MonoBehaviour
         itemDictionary = new Dictionary<string, Item>();
         itemDictionaryInit();
         inventoryItemList = new List<Item>();
-        inventoryItemList.Add(itemDictionary["테스트"]);
     }
 
     private void itemDictionaryInit()
     {
-        itemDictionary.Add( "테스트", new Item("10001", "테스트", "테스트용 아이템", Item.ItemType.Single));
+        
     }
 
     public void GetItem(string _itemName)
     {
         for (int i = 0; i < inventoryItemList.Count; i++)
         {
-            // 현재 인벤토리에 얻으려는 아이템이 있으면 아이템 갯수를 증가
-            if (inventoryItemList[i].itemName == _itemName)
-            {
-                inventoryItemList[i].itemCount++;
-                return;
-            }
-
             // 현재 인벤토리에 얻으려는 아이템이 없으면 itemList에서 아이템을 찾아서 추가해줌.
             inventoryItemList.Add(itemDictionary[_itemName]);
         }
