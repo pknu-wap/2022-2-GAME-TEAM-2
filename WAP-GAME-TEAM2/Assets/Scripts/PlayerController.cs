@@ -147,4 +147,9 @@ public class PlayerController : MonoBehaviour
 
         _anim.SetFloat(_dir, val);
     }
+
+    public Animator GetAnimator()
+    {
+        return _anim;
+    }
 }
