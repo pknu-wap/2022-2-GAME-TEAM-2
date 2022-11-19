@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
     public void ShowText(string[] _sentences)
     {
         talking = true;
-        PlayerController.instance.IsPause = true;
+       PlayerController.instance.IsPause = true;
 
         for (int i = 0; i < _sentences.Length; i++)
         {
@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i]; // 한글자 씩 출력.
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
         }
         keyActivated = true;
     }

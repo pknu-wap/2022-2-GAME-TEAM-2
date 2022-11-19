@@ -6,6 +6,8 @@ using UnityEngine;
 public enum SwitchType
 {
     StartEvent,
+    BCDoorOpened,
+    BCKeyEvent,
     
 }
 
@@ -33,9 +35,4 @@ public class EventManager : MonoBehaviour
     }
     #endregion
     
-
-    private void Start()
-    {
-        
-    }
 }

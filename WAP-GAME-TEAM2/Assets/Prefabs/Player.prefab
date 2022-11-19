@@ -207,12 +207,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b39e92d6f3e3447853ef45d4bec4d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fSpeed: 0.05
-  iWalkCount: 20
-  _baloonAnim: {fileID: 9105816137847773316}
+  speed: 0.05
+  walkCount: 20
+  animator: {fileID: 2097401454}
+  boxCollider: {fileID: 8810885723389869120}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  _baloonAnim: {fileID: 9105816137847773316}
   flashLight: {fileID: 1721648294079348214}
   stepSound: Footstep1
 --- !u!61 &8810885723389869120
@@ -249,7 +251,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8810885723389869149}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -292,6 +294,10 @@ PrefabInstance:
     - target: {fileID: 7870563279702410268, guid: b6703187599b8b849b59d8091692a45d, type: 3}
       propertyPath: m_Name
       value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870563279702410268, guid: b6703187599b8b849b59d8091692a45d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7870563279702410270, guid: b6703187599b8b849b59d8091692a45d, type: 3}
       propertyPath: m_RootOrder
@@ -343,11 +349,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7870563279702410271, guid: b6703187599b8b849b59d8091692a45d, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 4
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870563279702410271, guid: b6703187599b8b849b59d8091692a45d, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -980202173
       objectReference: {fileID: 0}
     - target: {fileID: 7870563279702410271, guid: b6703187599b8b849b59d8091692a45d, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[1]
-      value: -980202173
+      value: -1109366389
       objectReference: {fileID: 0}
     - target: {fileID: 7870563279702410271, guid: b6703187599b8b849b59d8091692a45d, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[2]

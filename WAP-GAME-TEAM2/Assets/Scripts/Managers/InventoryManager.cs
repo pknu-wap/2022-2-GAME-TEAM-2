@@ -35,14 +35,14 @@ public class InventoryManager : MonoBehaviour
 
     private void itemDictionaryInit()
     {
-        
+        itemDictionary.Add("배전함 열쇠(3F)", new Item("배전함 열쇠(3F)", "3층 배전함의 열쇠이다."));
     }
 
     public void GetItem(string _itemName)
     {
-        for (int i = 0; i < inventoryItemList.Count; i++)
+        // 현재 인벤토리에 얻으려는 아이템이 없으면 itemList에서 아이템을 찾아서 추가해줌.
+        if (!inventoryItemList.Contains(itemDictionary[_itemName]))
         {
-            // 현재 인벤토리에 얻으려는 아이템이 없으면 itemList에서 아이템을 찾아서 추가해줌.
             inventoryItemList.Add(itemDictionary[_itemName]);
         }
     }

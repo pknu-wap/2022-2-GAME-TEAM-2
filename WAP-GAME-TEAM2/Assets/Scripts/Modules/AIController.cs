@@ -12,23 +12,22 @@ public class AIController : MovingObject
 
     private string direction;               // 이동 방향
 
-    public bool chase = true;              // 참일시 추적
+    public bool chase;             // 참일시 추적
 
-
-    // Start is called before the first frame update
+    
     void Start()
     {
-        queue = new Queue<string>();
         current_interMWT = inter_MoveWaitTime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!chase || !canMove) return;
         current_interMWT -= Time.deltaTime;
 
         // 움직임 시도
-        if (current_interMWT <= 0 && chase && canMove)
+        if (current_interMWT <= 0)
         {
             canMove = false;
             current_interMWT = inter_MoveWaitTime;      // 한번 움직이면 다시 시간 초기화
@@ -40,15 +39,15 @@ public class AIController : MovingObject
             if(base.CheckCollision())
             {
                 // 다른 방향으로 이동
-                direction = ToPlayerRedirection(direction);
+                direction = ToPlayerRedirection();
             }
             base.Move(direction);                       // direction방향으로 이동
         }
     }
 
-    private string ToPlayerRedirection(string _direction)
+    private string ToPlayerRedirection()
     {
-        vector.Set(0, 0, vector.z);                     // MovingObject의 애니메이터 결정
+        vector.Set(0, 0);                     // MovingObject의 애니메이터 결정
 
         PlayerPos = PlayerController.instance.transform.position;
         AIPos = transform.position;
@@ -61,62 +60,25 @@ public class AIController : MovingObject
         {
             int randNum = Random.Range(0, 2);
             if (randNum == 0)
-            {
                 return "UP";
-            }
             else
-            {
                 return "DOWN";
-                
-            }
-
         }
         else
         {
             int randNum = Random.Range(0, 2);
             if (randNum == 0)
-            {
                 return "LEFT";
-            }
             else
-            {
                 return "RIGHT";
-            }
         }
-
-        //if (_direction == "UP" || _direction == "DOWN")
-        //{
-        //    int randNum = Random.Range(0, 2);
-        //    if (randNum == 0)
-        //    {
-        //        return "LEFT";
-        //    }
-        //    else
-        //    {
-        //        return "RIGHT";
-        //    }
-
-        //}
-        //else if(_direction == "LEFT" || _direction == "RIGHT")
-        //{
-        //    int randNum = Random.Range(0, 2);
-        //    if (randNum == 0)
-        //    {
-        //        return "UP";
-        //    }
-        //    else
-        //    {
-        //        return "DOWN";
-        //    }
-        //}
-
         return "DOWN";
     }
 
     // direction에 player를 추격하도록 입력
     private void ToPlayerDirection()
     {
-        vector.Set(0, 0, vector.z);                     // MovingObject의 애니메이터 결정
+        vector.Set(0, 0);  
 
         PlayerPos = PlayerController.instance.transform.position;
         AIPos = transform.position;

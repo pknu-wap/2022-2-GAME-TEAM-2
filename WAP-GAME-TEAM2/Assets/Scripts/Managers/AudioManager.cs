@@ -81,10 +81,9 @@ public class AudioManager : MonoBehaviour
         {
             GameObject soundObject = new GameObject("???? ???? ??? : " + i + " = " + sounds[i].name);
             sounds[i].SetSource(soundObject.AddComponent<AudioSource>());
-            // Hierachy?? soundObject?? ???????
             soundObject.transform.SetParent(this.transform);
         }
-       // PlayBGM("Title");
+        PlayBGM("3Floor");
     }
 
     public void PlayBGM(string _name)
