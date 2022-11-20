@@ -91,7 +91,6 @@ public class PipePuzzle : MonoBehaviour
             tiles[curSelectIdx].eulerAngles = new Vector3(0.0f, tiles[curSelectIdx].eulerAngles.y, angle[curAngleIdx[curSelectIdx]]);
             if (true)//(CheckResult())
             {
-                theEvent.isEventIng = true;
                 theEvent.switches[(int)SwitchType.BCDoorOpened] = true;
                 door.DoorOpen();
                 StartCoroutine(ClearCoroutine());
@@ -108,7 +107,7 @@ public class PipePuzzle : MonoBehaviour
 
     }
 
-    bool CheckResult()
+    private bool CheckResult()
     {
         for (int i = 0; i < tiles.Length; i++)
         {
@@ -134,7 +133,6 @@ public class PipePuzzle : MonoBehaviour
         yield return new WaitForSeconds(2f);
         
         DialogueManager.instance.ShowText(Dial[1]);
-        theEvent.isEventIng = false;
         gameObject.SetActive(false);
     }
 }

@@ -18,7 +18,7 @@ public class Door : MonoBehaviour
 
     protected bool doorOpened;
     protected bool flag;
-    protected bool isStartDial;
+    protected bool isInteracting;
     
    
     
@@ -28,9 +28,9 @@ public class Door : MonoBehaviour
         if (dirValue != val) return;
         
         if (!flag || DialogueManager.instance.talking) return;
-        if (isStartDial && !DialogueManager.instance.talking)
+        if (isInteracting && !DialogueManager.instance.talking)
         {
-            isStartDial = false;
+            isInteracting = false;
             return;
         }
         
@@ -43,7 +43,7 @@ public class Door : MonoBehaviour
         {
             AudioManager.instance.PlaySFX(lockSound);
             DialogueManager.instance.ShowText(lockDial);
-            isStartDial = true;
+            isInteracting = true;
         }
     }
     
@@ -58,7 +58,6 @@ public class Door : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    
     protected void OnTriggerEnter2D(Collider2D col)
     {
         flag = true;
