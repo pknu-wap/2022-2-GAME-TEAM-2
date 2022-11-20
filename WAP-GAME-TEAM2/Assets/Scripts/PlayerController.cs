@@ -117,12 +117,14 @@ public class PlayerController : MovingObject
             animator.SetFloat("DirX", 0f);
         animator.SetFloat(vector, val);
     }
-
+    
     public float GetPlayerDir(string _dir)
     {
         float f_vector = animator.GetFloat(_dir);
         return f_vector;
     }
-    
-    
+    public Animator GetAnimator()
+    {
+        return _anim;
+    }
 }
