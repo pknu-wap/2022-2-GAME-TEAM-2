@@ -3,19 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BroadCastDoor : Door
 {
     public GameObject[] OpenedDoor;
     public GameObject[] ClosedDoor;
-    void Start()
+
+    public GameObject playerLight;
+    protected override void Start()
     {
         DoorOpen();
     }
     
-    public void DoorOpen()
+    public void DoorOpen()                                                                                                                                                                                                                             
     {
-        doorOpened = EventManager.instance.switches[(int)SwitchType.BCDoorOpened];
+        doorOpened = EventManager.instance.switches[(int)SwitchType.StDoorOpened];
         foreach (var t in OpenedDoor)
             t.SetActive(false);
         foreach (var t in ClosedDoor)
@@ -28,9 +31,28 @@ public class BroadCastDoor : Door
         }
         else
         {
+            playerLight = PlayerController.instance.flashLight.gameObject;
             foreach (var t in ClosedDoor)
                 t.SetActive(true);
         }
+    }
+    
+    protected override IEnumerator MoveCo()
+    {
+        PlayerController.instance.IsPause = true;
+        AudioManager.instance.PlaySFX(moveSound);
+        FadeManager.instance.FadeOut();
+        yield return new WaitForSeconds(1.5f);
+        PlayerController.instance.transform.position = toMove;
+        PlayerController.instance.isSceneChange = true;
+        
+        if (!EventManager.instance.switches[(int)SwitchType.StFirstEntry])
+        {
+            playerLight.SetActive(false);
+            EventManager.instance.switches[(int)SwitchType.StFirstEntry] = true;
+        }
+            ;
+        SceneManager.LoadScene(sceneName);
     }
     
  

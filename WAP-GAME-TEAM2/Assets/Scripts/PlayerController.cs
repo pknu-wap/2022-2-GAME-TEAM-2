@@ -10,20 +10,14 @@ public class PlayerController : MovingObject
     public static PlayerController instance;
 
     public bool isSceneChange;
+    public Light2D flashLight;
 
     private float _fApplyRunSpeed;
     private bool _bRunFlag;
-    private bool isPause; 
-    public bool IsPause
-    {
-        get => isPause;
-        set => isPause = value;
-    }
-    
+    public bool IsPause { get; set; }
+
     [SerializeField] private Animator _baloonAnim;
-
-    [SerializeField] private Light2D flashLight;
-
+    
     private AudioManager theAudio;
     [SerializeField] private string stepSound;
     
@@ -49,7 +43,7 @@ public class PlayerController : MovingObject
 
     private void FixedUpdate()
     {
-        if (isPause || !canMove) return;
+        if (IsPause || !canMove) return;
         
         if ((Input.GetAxisRaw("Horizontal") != 0|| Input.GetAxisRaw("Vertical") != 0))
         {
@@ -122,9 +116,5 @@ public class PlayerController : MovingObject
     {
         float f_vector = animator.GetFloat(_dir);
         return f_vector;
-    }
-    public Animator GetAnimator()
-    {
-        return _anim;
     }
 }

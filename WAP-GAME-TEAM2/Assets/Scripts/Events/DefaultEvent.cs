@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class DefaultEvent : MonoBehaviour
 {
-    protected EventManager theEvent; 
-    protected bool isCollision;
+    protected EventManager theEvent;
     protected bool isInteracting;
+    protected bool isCollision;
     
     public string dir;
     public float val;
     
+    [TextArea(1, 2)] 
     public string[] Dial;
 
     public bool isExtraEvent;
     
-    void Update()
+    protected virtual void Start()
+    {
+        theEvent = EventManager.instance;
+        SwitchCheck();
+    }
+    
+    protected virtual void Update()
     {
         if (!isCollision || DialogueManager.instance.talking || theEvent.isEventIng) return;
         if (isInteracting && !DialogueManager.instance.talking)
@@ -28,7 +35,6 @@ public class DefaultEvent : MonoBehaviour
         if (dirValue != val) return;
         
         if (!Input.GetKeyDown(KeyCode.Z)) return;
-
         
         DialogueManager.instance.ShowText(Dial);
         isInteracting = true;
@@ -39,6 +45,7 @@ public class DefaultEvent : MonoBehaviour
     }
 
     protected virtual IEnumerator ExtraEventCo() {yield break;}
+    protected virtual void SwitchCheck() { return;}
     protected void OnTriggerEnter2D(Collider2D col)
     {
         isCollision = true;

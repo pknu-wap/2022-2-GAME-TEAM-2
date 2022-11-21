@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6839321616126135230
+--- !u!1 &861738163901378562
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,58 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6839321616126135219}
-  - component: {fileID: 6839321616126135228}
-  - component: {fileID: 6839321616126135229}
+  - component: {fileID: 861738163901378561}
+  - component: {fileID: 861738163901378560}
+  - component: {fileID: 861738163901378563}
   m_Layer: 0
-  m_Name: TransferMap
+  m_Name: DefaultDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6839321616126135219
+--- !u!4 &861738163901378561
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6839321616126135230}
+  m_GameObject: {fileID: 861738163901378562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 1.53, z: 0}
+  m_LocalPosition: {x: -2.333841, y: 9.449903, z: 0.057664793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6839321616126135228
+--- !u!114 &861738163901378560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861738163901378562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39386fd033f865a4192c9372195bdafd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockSound: DoorClose
+  moveSound: DoorOpen
+  toMove: {x: 3.5, y: 4.5}
+  lockDial: "\uC5F4\uB9AC\uC9C0 \uC54A\uB294\uB2E4."
+  dir: DirY
+  val: -1
+  sceneName: BroadcastRoom
+  doorOpened: 0
+--- !u!61 &861738163901378563
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6839321616126135230}
+  m_GameObject: {fileID: 861738163901378562}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -59,19 +79,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6839321616126135229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6839321616126135230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb37fc0eadbd5df41afe91985776aa2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSceneChange: 0
-  v_targetPos: {x: 9, y: 12}
-  sceneName: 
-  targetBound: {fileID: 0}

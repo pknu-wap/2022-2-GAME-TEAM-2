@@ -18,8 +18,8 @@ public abstract class ItemEvent : MonoBehaviour
     public string itemName;
     public string getSound = "Detect";
     public string getDial;
-    protected abstract void SetSwitch();
-    protected abstract void SwitchCheck();
+    
+    public SwitchType ItemSwitch;
     protected abstract IEnumerator ItemEventCo();
 
     protected void Start()
@@ -58,6 +58,20 @@ public abstract class ItemEvent : MonoBehaviour
         }
 
         spriteObj.gameObject.SetActive(false);
+    }
+
+    protected virtual void SetSwitch()
+    {
+        EventManager.instance.switches[(int)ItemSwitch] = true;
+    }
+
+    protected virtual void SwitchCheck()
+    {
+        if (theEvent.switches[(int)ItemSwitch])
+        {
+            spriteObj.SetActive(false);
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

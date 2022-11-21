@@ -42,13 +42,13 @@ public class DialogueManager : MonoBehaviour
         count = 0;
         text.text = "";
         listSentences = new List<string>();
-        nextDialogue = false;
+        nextDialogue = true;
     }
 
     public void ShowText(string[] _sentences)
-    {
+    { 
         talking = true;
-       PlayerController.instance.IsPause = true;
+        PlayerController.instance.IsPause = true;
 
         for (int i = 0; i < _sentences.Length; i++)
         {

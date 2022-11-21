@@ -7,7 +7,7 @@ public class BCKeyEvent : ItemEvent
 {
     private PlayerController thePlayer;
     
-    public Light2D playerLight;
+    private Light2D playerLight;
     public GameObject chaser;
     
     public string[] Dials;
@@ -21,6 +21,7 @@ public class BCKeyEvent : ItemEvent
         yield return new WaitUntil(() => DialogueManager.instance.nextDialogue == true);
         yield return new WaitForSeconds(1f);
         thePlayer = PlayerController.instance;
+        playerLight = thePlayer.flashLight;
         
         AudioManager.instance.PlaySFX(offSound);
         playerLight.gameObject.SetActive(true);
@@ -55,19 +56,4 @@ public class BCKeyEvent : ItemEvent
         thePlayer.IsPause = false;
     }
 
-    protected override void SwitchCheck()
-    {
-        if (theEvent.switches[(int)SwitchType.BCKeyEvent])
-        {
-            gameObject.SetActive(false);
-            spriteObj.SetActive(false);
-        }
-            
-    }
-    protected override void SetSwitch()
-    {
-        theEvent.switches[(int)SwitchType.BCKeyEvent] = true;
-    }
-
-   
 }

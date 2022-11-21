@@ -42,7 +42,7 @@ public class ComputerRoomDialogEvent : MonoBehaviour
     {
         if (isCollision && !isInteracting)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && PlayerController.instance.GetAnimator().GetFloat("DirY") == -1f)
+            if (Input.GetKeyDown(KeyCode.Z)) //&& PlayerController.instance.GetAnimator().GetFloat("DirY") == -1f)
                 StartCoroutine(DialogueCoroutine());
         }
     }

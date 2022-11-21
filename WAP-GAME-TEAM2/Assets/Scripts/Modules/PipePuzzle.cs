@@ -43,7 +43,7 @@ public class PipePuzzle : MonoBehaviour
 
     void Update()
     {
-        if (theEvent.switches[(int)SwitchType.BCDoorOpened]) return;
+        if (theEvent.switches[(int)SwitchType.StDoorOpened]) return;
         
         #region KeyArrow
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -91,7 +91,7 @@ public class PipePuzzle : MonoBehaviour
             tiles[curSelectIdx].eulerAngles = new Vector3(0.0f, tiles[curSelectIdx].eulerAngles.y, angle[curAngleIdx[curSelectIdx]]);
             if (true)//(CheckResult())
             {
-                theEvent.switches[(int)SwitchType.BCDoorOpened] = true;
+                theEvent.switches[(int)SwitchType.StDoorOpened] = true;
                 door.DoorOpen();
                 StartCoroutine(ClearCoroutine());
             }
@@ -100,6 +100,7 @@ public class PipePuzzle : MonoBehaviour
         
         else if (Input.GetKeyDown(KeyCode.X))
         {
+            theEvent.isEventIng = false;
             panels[curSelectIdx].SetActive(false);
             PlayerController.instance.gameObject.SetActive(true);
             gameObject.SetActive(false);
@@ -133,6 +134,7 @@ public class PipePuzzle : MonoBehaviour
         yield return new WaitForSeconds(2f);
         
         DialogueManager.instance.ShowText(Dial[1]);
+        theEvent.isEventIng = false;
         gameObject.SetActive(false);
     }
 }

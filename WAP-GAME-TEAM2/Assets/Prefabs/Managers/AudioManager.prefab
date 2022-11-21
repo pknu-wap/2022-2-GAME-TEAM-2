@@ -73,7 +73,7 @@ MonoBehaviour:
     loop: 1
   - name: 3Floor
     clip: {fileID: 8300000, guid: a60aef81fbf705143abf7d5e7b894d8d, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 0.95
     loop: 1
   - name: Footstep1
@@ -143,6 +143,16 @@ MonoBehaviour:
     loop: 0
   - name: "\uB538\uAE4D"
     clip: {fileID: 8300000, guid: 6781f776f6764e7489050c81f55d8962, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uAE34\uC7A5\uAC102"
+    clip: {fileID: 8300000, guid: c8f453b7b53505d478fc4dd6bbecaa50, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uBC29\uD654\uBB38\uAC1C\uBC29"
+    clip: {fileID: 8300000, guid: 0438db3481f10864d87fa3d8027a5c83, type: 3}
     volume: 1
     pitch: 1
     loop: 0
