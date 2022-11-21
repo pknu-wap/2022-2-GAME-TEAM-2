@@ -5,34 +5,19 @@ using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MovingObject
 {
     public static PlayerController instance;
 
-    [SerializeField] private float fSpeed;
+    public bool isSceneChange;
+    public Light2D flashLight;
+
     private float _fApplyRunSpeed;
     private bool _bRunFlag;
-    private bool _bCanMove;
-    private bool isPause; 
-    public bool IsPause
-    {
-        get => isPause;
-        set => isPause = value;
-    }
+    public bool IsPause { get; set; }
 
-    [SerializeField] private int iWalkCount;
-    private int _curWalkCount;
-
-    private Vector2 _dir;
-
-    private Animator _anim;
     [SerializeField] private Animator _baloonAnim;
     
-    private BoxCollider2D _boxCollider;
-    [SerializeField] private LayerMask layerMask;
-
-    [SerializeField] private Light2D flashLight;
-
     private AudioManager theAudio;
     [SerializeField] private string stepSound;
     
@@ -53,30 +38,27 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        _anim = GetComponent<Animator>();
-        _boxCollider = GetComponent<BoxCollider2D>();
         theAudio = AudioManager.instance;
-        _bCanMove = true;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        if (isPause) return;
+        if (IsPause || !canMove) return;
         
-        if ((Input.GetAxisRaw("Horizontal") != 0|| Input.GetAxisRaw("Vertical") != 0) && _bCanMove)
+        if ((Input.GetAxisRaw("Horizontal") != 0|| Input.GetAxisRaw("Vertical") != 0))
         {
-            _bCanMove = false;
+            canMove = false;
             StartCoroutine(PlayerMoveCoroutine());
         }
     }
 
     IEnumerator PlayerMoveCoroutine()
     {
-        while (!isPause && Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        while (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                _fApplyRunSpeed = fSpeed;
+                _fApplyRunSpeed = speed;
                 _bRunFlag = true;
             }
             else
@@ -85,71 +67,54 @@ public class PlayerController : MonoBehaviour
                 _bRunFlag = false;
             }
 
-            _dir.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            if (_dir.x != 0)
-                _dir.y = 0;
+            vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            if (vector.x != 0)
+                vector.y = 0;
             
-            _anim.SetFloat("DirX", _dir.x);
-            _anim.SetFloat("DirY", _dir.y);
-            
+            animator.SetFloat("DirX", vector.x);
+            animator.SetFloat("DirY", vector.y);
+
             bool checkCollisionFlag = CheckCollision();
             if (checkCollisionFlag)
                 break;
             
-            _anim.SetBool("Walking", true);
+            animator.SetBool("Walking", true);
             theAudio.PlaySFX(stepSound);
             
-            while (_curWalkCount < iWalkCount)
+            while (currentWalkCount < walkCount)
             {
                 transform.Translate(new Vector2(
-                    _dir.x * (fSpeed + _fApplyRunSpeed), _dir.y * (fSpeed + _fApplyRunSpeed)));
+                    vector.x * (speed + _fApplyRunSpeed), vector.y * (speed + _fApplyRunSpeed)));
 
                 if (_bRunFlag)
-                    ++_curWalkCount;
-                ++_curWalkCount;
+                    ++currentWalkCount;
+                ++currentWalkCount;
                 yield return new WaitForSeconds(0.01f);
             }
 
-            _anim.SetBool("Walking", false);
-            _curWalkCount = 0;
+            animator.SetBool("Walking", false);
+            currentWalkCount = 0;
         }
 
-        _bCanMove = true;
+        canMove = true;
     }
-    
-    protected bool CheckCollision()
-    {
-        RaycastHit2D hit;
-
-        Vector2 start = transform.position;
-        Vector2 end = start + new Vector2(_dir.x * fSpeed * iWalkCount , _dir.y * fSpeed * iWalkCount );
-
-        _boxCollider.enabled = false;
-        hit = Physics2D.Linecast(start, end, layerMask);
-        _boxCollider.enabled = true;
-        
-        if (hit.transform)
-            return true;
-        return false;
-    }
-
     public void SetBalloonAnim()
     {
         _baloonAnim.SetTrigger("Balloon");
     }
 
-    public void SetPlayerDirAnim(string _dir, float val)
+    public void SetPlayerDirAnim(string vector, float val)
     {
-        if (_dir == "DirX")
-            _anim.SetFloat("DirY", 0f);
+        if (vector == "DirX")
+            animator.SetFloat("DirY", 0f);
         else
-            _anim.SetFloat("DirX", 0f);
-
-        _anim.SetFloat(_dir, val);
+            animator.SetFloat("DirX", 0f);
+        animator.SetFloat(vector, val);
     }
-
-    public Animator GetAnimator()
+    
+    public float GetPlayerDir(string _dir)
     {
-        return _anim;
+        float f_vector = animator.GetFloat(_dir);
+        return f_vector;
     }
 }

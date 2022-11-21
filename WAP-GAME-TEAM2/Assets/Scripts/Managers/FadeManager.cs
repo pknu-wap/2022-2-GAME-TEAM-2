@@ -25,7 +25,7 @@ public class FadeManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     public void FadeOut(float _speed = 0.2f)
     {
         StartCoroutine(FadeOutCoroutine(_speed));

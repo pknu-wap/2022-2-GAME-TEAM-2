@@ -48,7 +48,7 @@ public class SafeNumberEvent : MonoBehaviour
     {
         if (isCollision && !isInteracting)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && PlayerController.instance.GetAnimator().GetFloat("DirY") == 1f)
+            if (Input.GetKeyDown(KeyCode.Z))// && PlayerController.instance.GetAnimator().GetFloat("DirY") == 1f)
             {
                 StartCoroutine(NumberCoroutine());
             }
@@ -62,7 +62,7 @@ public class SafeNumberEvent : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
 
-        theNumber.ShowNumber(correctNumber);        // Á¤´ä ³Ñ°ÜÁÖ±â 
+        theNumber.ShowNumber(correctNumber);        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½Ö±ï¿½ 
         yield return new WaitUntil(() => !theNumber.activeated);
 
         if (theNumber.GetResult())

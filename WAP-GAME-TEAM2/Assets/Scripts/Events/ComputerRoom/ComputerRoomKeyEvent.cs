@@ -38,9 +38,9 @@ public class ComputerRoomKeyEvent : MonoBehaviour
     {
         if (isCollision)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && PlayerController.instance.GetAnimator().GetFloat("DirY") == 1f)
+            if (Input.GetKeyDown(KeyCode.Z)) //&& PlayerController.instance.GetAnimator().GetFloat("DirY") == 1f)
             {
-                InventoryManager.instance.GetItem("2-2¹Ý");
+                InventoryManager.instance.GetItem("2-2ï¿½ï¿½");
 
                 if (!theEvent.switches[(int)SwitchType.ComputerRoomKeyEvent])
                     theEvent.switches[(int)SwitchType.ComputerRoomKeyEvent] = true;

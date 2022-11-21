@@ -71,6 +71,11 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 1
+  - name: 3Floor
+    clip: {fileID: 8300000, guid: a60aef81fbf705143abf7d5e7b894d8d, type: 3}
+    volume: 0.5
+    pitch: 0.95
+    loop: 1
   - name: Footstep1
     clip: {fileID: 8300000, guid: 73be59b4e86e87b4b8d59f017fc92eba, type: 3}
     volume: 1
@@ -82,7 +87,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
   - name: Detect
-    clip: {fileID: 8300000, guid: 13f52f005471b4849ab70d9149a1edef, type: 3}
+    clip: {fileID: 8300000, guid: 1ee178f014714d94d8566f906bb70d68, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -98,6 +103,56 @@ MonoBehaviour:
     loop: 0
   - name: "\uB35C\uCEF9\uAC70\uB9AC\uB294\uC18C\uB9AC"
     clip: {fileID: 8300000, guid: 6e771706453aa7e409dd972c989f35ec, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: PowerOn
+    clip: {fileID: 8300000, guid: dbdb62c0ebc4e9a40951347ee04a36e0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: PipeRotate
+    clip: {fileID: 8300000, guid: 9d8c9df33caa47b4cb94eeb989fcc43a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Lock
+    clip: {fileID: 8300000, guid: dea09de3dd4563d469337210fdfd85dd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC7A5\uC18C\uC774\uB3D9"
+    clip: {fileID: 8300000, guid: e30c7574825628c408b465abd2b39aaf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uBC29\uC1A1\uC2E4\uBB38"
+    clip: {fileID: 8300000, guid: 673acb9e66cba054b91dc2ae2af35a6a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uAE34\uC7A5\uAC101"
+    clip: {fileID: 8300000, guid: 32487888dbd5a3f4b8fdba742554724b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC2EC\uC7A5\uC18C\uB9AC"
+    clip: {fileID: 8300000, guid: c20ad180e088af243ba3f7389b864484, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB538\uAE4D"
+    clip: {fileID: 8300000, guid: 6781f776f6764e7489050c81f55d8962, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uAE34\uC7A5\uAC102"
+    clip: {fileID: 8300000, guid: c8f453b7b53505d478fc4dd6bbecaa50, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uBC29\uD654\uBB38\uAC1C\uBC29"
+    clip: {fileID: 8300000, guid: 0438db3481f10864d87fa3d8027a5c83, type: 3}
     volume: 1
     pitch: 1
     loop: 0

@@ -40,7 +40,7 @@ public class ToiletFChaseEvent : MonoBehaviour
     {
         if (isCollision)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && PlayerController.instance.GetAnimator().GetFloat("DirX") == 1f)
+            if (Input.GetKeyDown(KeyCode.Z))// && PlayerController.instance.GetAnimator().GetFloat("DirX") == 1f)
                 StartCoroutine(ChaseCoroutine());
         }
     }
