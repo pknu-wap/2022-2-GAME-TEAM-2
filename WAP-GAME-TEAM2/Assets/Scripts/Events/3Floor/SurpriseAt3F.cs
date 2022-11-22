@@ -6,6 +6,7 @@ using UnityEngine;
 public class SurpriseAt3F : MonoBehaviour
 {
     public string surpriseSound;
+    public GameObject dialEvent;
     public GameObject[] objSprites1;
     public GameObject[] objSprites2;
     void Start()
@@ -14,6 +15,7 @@ public class SurpriseAt3F : MonoBehaviour
         {
             foreach (var i in objSprites2)
                 i.SetActive(true);
+            dialEvent.SetActive(true);
         }
         else
         {

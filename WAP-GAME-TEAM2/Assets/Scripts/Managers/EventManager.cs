@@ -7,7 +7,8 @@ public enum SwitchType
 {
     StartEvent,
     EntryEventAt3F,         // 3층 처음에 피를 봤을 때의 이벤트
-    SurpriseAt3F,           // 액자 연출,         
+    SurpriseAt3F,           // 액자 연출,
+    Opened21,               // 2 - 1 문 열림
     CpDoorOpened,           // 컴퓨터실 문 열림
     BcDoorOpened,           // 방송실 문 열림
     StDoorOpened,           // 스튜디오 문 열림
