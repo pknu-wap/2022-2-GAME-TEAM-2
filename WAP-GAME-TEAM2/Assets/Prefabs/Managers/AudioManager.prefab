@@ -156,6 +156,76 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: "\uD53C\uBD84\uCD9C"
+    clip: {fileID: 8300000, guid: 22807fa23402fcd45b282846e89ef253, type: 3}
+    volume: 0.85
+    pitch: 1
+    loop: 0
+  - name: "\uB3C4"
+    clip: {fileID: 8300000, guid: 9fb785b7cf68fe846a182e43158994d3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB808"
+    clip: {fileID: 8300000, guid: b737bbc0dfb7bd84b9efde354ce0ec2e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uBBF8"
+    clip: {fileID: 8300000, guid: 6188565cb6dfc2840baaae13e3508c06, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uD30C"
+    clip: {fileID: 8300000, guid: 64892f5b98c8c294093d2b43e0bc7173, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC194"
+    clip: {fileID: 8300000, guid: 35f0c4d03d6f1664b8058088a3fb5cf6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB77C"
+    clip: {fileID: 8300000, guid: 8d87dd4dc139a834d8caa4cc7c799571, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC2DC"
+    clip: {fileID: 8300000, guid: 12db2aa3b5f013240a500a127c411c8e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB3C4\uC624"
+    clip: {fileID: 8300000, guid: 2814b2661762fc243bfc376e54366fef, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB3C4\uC0F5"
+    clip: {fileID: 8300000, guid: 5abefa2d8fd8b9245931508e6ae74d9e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB808\uC0F5"
+    clip: {fileID: 8300000, guid: 2136c946bbcdb7c4d8fb9656043ab8d8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uD30C\uC0F5"
+    clip: {fileID: 8300000, guid: c206d9d5e63bb004c8eb0f7f9920361e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC194\uC0F5"
+    clip: {fileID: 8300000, guid: 1b392dcf76ba01d4d99ca95f7c1b0c6b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB77C\uC0F5"
+    clip: {fileID: 8300000, guid: 29194a2bd75204e439b6d0b79295b1ed, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   nowPlayBGM: 0
 --- !u!81 &8282243632900502260
 AudioListener:

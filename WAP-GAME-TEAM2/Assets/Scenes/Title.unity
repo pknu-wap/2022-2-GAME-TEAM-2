@@ -1214,6 +1214,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 702397038, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013056595, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093630902, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634941607, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709722831, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1358423828410728976, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -1127,6 +1127,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName
       value: ComputerRoom
       objectReference: {fileID: 0}
@@ -4916,6 +4920,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: moveSound
       value: "\uC7A5\uC18C\uC774\uB3D9"
       objectReference: {fileID: 0}
@@ -5112,6 +5120,10 @@ PrefabInstance:
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName
@@ -9542,6 +9554,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: moveSound
       value: "\uC7A5\uC18C\uC774\uB3D9"
       objectReference: {fileID: 0}
@@ -10242,6 +10258,10 @@ PrefabInstance:
       value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName
       value: ToiletF(3F)
       objectReference: {fileID: 0}
@@ -10507,6 +10527,10 @@ PrefabInstance:
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName
@@ -19470,6 +19494,10 @@ PrefabInstance:
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorIndex
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName

@@ -20,6 +20,7 @@ public class Menu : MonoBehaviour
         
     private bool menuActivated; // 메뉴 활성화 여부
     private bool otherActivated; // 인벤토리, 통화, 메시지 탭 활성화 여부
+    
     public bool OtherActivated { set => otherActivated = value; }
 
     private void Start()

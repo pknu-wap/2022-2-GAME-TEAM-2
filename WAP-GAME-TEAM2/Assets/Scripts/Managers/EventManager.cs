@@ -9,6 +9,7 @@ public enum SwitchType
     EntryEventAt3F,         // 3층 처음에 피를 봤을 때의 이벤트
     SurpriseAt3F,           // 액자 연출,
     Opened21,               // 2 - 1 문 열림
+    BloodEvent21,           // 2 - 1 연출 
     CpDoorOpened,           // 컴퓨터실 문 열림
     BcDoorOpened,           // 방송실 문 열림
     StDoorOpened,           // 스튜디오 문 열림
@@ -19,6 +20,7 @@ public enum SwitchType
     SafeNumberEvent,        // 3층 컴퓨터실 금고 이벤트
     ComputerRoomKeyEvent,   // 3층 컴퓨터실 금고 키 획득 이벤트
     Opened2F,               // 2층 문 열림 이벤트
+    MusicRoomEvent,         // 2층 음악실 이벤트
 }
 
 // 게임에서 일어나는 이벤트를 관리해주는 클래스 (이벤트가 한번만 일어나게 하기 위함)
@@ -28,6 +30,7 @@ public class EventManager : MonoBehaviour
     public static EventManager instance;
     public bool[] switches;
     public bool isEventIng = false;
+    public bool isWorking;
     
 
     #region Singleton

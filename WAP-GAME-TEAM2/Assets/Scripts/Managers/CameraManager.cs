@@ -12,7 +12,7 @@ public class CameraManager : MonoBehaviour
 
     [SerializeField] private GameObject target;
     [SerializeField] private float fFollowSpeed;
-    [SerializeField] private bool b_isFollow;
+    public bool isFollow;
 
     private Vector3 v_targetPos;
 
@@ -49,17 +49,17 @@ public class CameraManager : MonoBehaviour
     
     void Update()
     {
-        if (b_isFollow)
-        {
-            Vector2 targetPosition = target.transform.position;
-            v_targetPos.Set(targetPosition.x, targetPosition.y, transform.position.z);
+        if (!isFollow) return;
+        
+        Vector2 targetPosition = target.transform.position;
+        v_targetPos.Set(targetPosition.x, targetPosition.y, transform.position.z);
 
-            transform.position = Vector3.Lerp(transform.position, v_targetPos, fFollowSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, v_targetPos, fFollowSpeed * Time.deltaTime);
 
-            float ClampedX = Mathf.Clamp(transform.position.x, v_minBound.x + f_halfWidth, v_maxBound.x - f_halfWidth);
-            float ClampedY = Mathf.Clamp(transform.position.y, v_minBound.y + f_halfHeight, v_maxBound.y - f_halfHeight);
-            transform.position = new Vector3(ClampedX, ClampedY, transform.position.z);
-        }
+        float ClampedX = Mathf.Clamp(transform.position.x, v_minBound.x + f_halfWidth, v_maxBound.x - f_halfWidth);
+        float ClampedY = Mathf.Clamp(transform.position.y, v_minBound.y + f_halfHeight, v_maxBound.y - f_halfHeight);
+        transform.position = new Vector3(ClampedX, ClampedY, transform.position.z);
+
     }
 
     public void SetBound(BoxCollider2D _newBound)

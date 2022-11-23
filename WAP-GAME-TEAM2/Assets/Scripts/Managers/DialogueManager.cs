@@ -55,6 +55,7 @@ public class DialogueManager : MonoBehaviour
             listSentences.Add(_sentences[i]);
         }
 
+        if (listSentences.Count == 0) return;
         StartCoroutine(StartTextCoroutine());
     }
     
