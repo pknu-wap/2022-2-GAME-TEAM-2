@@ -12,8 +12,7 @@ public abstract class ItemEvent : MonoBehaviour
     
     public bool isExtraEvent;
 
-    public string dir;
-    public float val;
+    public List<Vector2> playerDirList;
 
     public string itemName;
     public string getSound = "Detect";
@@ -38,8 +37,8 @@ public abstract class ItemEvent : MonoBehaviour
             return;
         }
         
-        float dirValue = PlayerController.instance.GetPlayerDir(dir);
-        if (dirValue != val) return;
+        if (!playerDirList.Contains(PlayerController.instance.GetVector()))
+            return;
         
         if (!Input.GetKeyDown(KeyCode.Z)) return;
 
