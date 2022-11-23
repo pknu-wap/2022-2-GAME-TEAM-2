@@ -18,6 +18,9 @@ public enum SwitchType
     SafeNumberEvent,        // 3층 컴퓨터실 금고 이벤트
     ComputerRoomKeyEvent,   // 3층 컴퓨터실 금고 키 획득 이벤트
     Opened2F,               // 2층 문 열림 이벤트
+    AudiovisualRoomChaseEvent,  // 시청각실 추격 이벤트
+    AudiovisualRoomLightEvent,  // 시청각실 추격 종료 이벤트
+    AudiovisualRoomKeyEvent,    // 시청각실 아이템 획득 이벤트
 }
 
 // 게임에서 일어나는 이벤트를 관리해주는 클래스 (이벤트가 한번만 일어나게 하기 위함)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f6ebed8050a1eb74eb36251767f9b425
+guid: 1d7249cfed0e265409c49313b38bf0f9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -101,91 +101,79 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_0
+      name: AudiovisualRoom_Chase_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
-        width: 32
+        y: 336
+        width: 48
         height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f6537d6766add94b847b6f4df338563
-      internalID: 760883485
+      spriteID: ff0da418fba808c4a890f4c011588344
+      internalID: 2025168591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_1
+      name: AudiovisualRoom_Chase_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 144
-        width: 32
+        x: 48
+        y: 336
+        width: 48
         height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6532cb5c77588df4b83582f225b811cb
-      internalID: 2025464532
+      spriteID: 3f934c23657cbac43a26b764eb4e9f76
+      internalID: 948879720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 144
-        width: 32
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a1dfd7c63744eb44904b86b4b18bfca
-      internalID: -654059704
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ToiletF(3F)_Chase_3
+      name: AudiovisualRoom_Chase_2
       rect:
         serializedVersion: 2
         x: 96
-        y: 144
-        width: 32
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e398fb26c617b8647a13ec4dab22bc20
+      internalID: -1350007525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 336
+        width: 48
         height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -194,82 +182,124 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 395c85e93c7296248bb0cd5fc1b375d8
-      internalID: 444796016
+      spriteID: c218b1992b837404f8ce50a9f96dc778
+      internalID: 1839432058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_4
+      name: AudiovisualRoom_Chase_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 336
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21b504b400c9f443bc0e8473d0a8aa1
+      internalID: 2081744956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 336
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67ca91e576d6ad4ab8d84e07b027bb3
+      internalID: -46887116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 32
+        y: 288
+        width: 48
         height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1df364ab354943844a2c856a601af934
-      internalID: -785401556
+      spriteID: 7fb59eb060f98d7448168f1dd3c4601b
+      internalID: 1061453940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_5
+      name: AudiovisualRoom_Chase_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
+        x: 48
+        y: 288
+        width: 48
         height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da6540a320fa96b459df6bd5efca58f7
-      internalID: -1915349268
+      spriteID: 0b993a70752a43f4d82659ad368ad81a
+      internalID: -630623843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98bb817f25392934e9fc7ac073796213
-      internalID: -797676266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ToiletF(3F)_Chase_7
+      name: AudiovisualRoom_Chase_8
       rect:
         serializedVersion: 2
         x: 96
-        y: 96
-        width: 32
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23b29b607a0fbd4dbbb3131de6802df
+      internalID: -1756048698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 48
         height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -278,82 +308,124 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 420291a54216abf4aa6c71b71c371828
-      internalID: -1936350957
+      spriteID: b26316e428085dd49b9564af94c877d0
+      internalID: 1970869753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_8
+      name: AudiovisualRoom_Chase_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3b5d26735f3114ca21e7aa0e7eb63c
+      internalID: -1170229342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 288
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79438308c5987304eb95844225dcbad8
+      internalID: -1491773085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 32
+        y: 240
+        width: 48
         height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51738aca3db0d5045b1816a072c97280
-      internalID: 373133700
+      spriteID: 53750a8352abb6e4f98f683a53046d4c
+      internalID: -1389376918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_9
+      name: AudiovisualRoom_Chase_13
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 32
+        x: 48
+        y: 240
+        width: 48
         height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a00e6a3f3661b74aa16a1f78c41748c
-      internalID: 1097950153
+      spriteID: b86851f5a884dc64bbea903ceb17448b
+      internalID: -1101098356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 32
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bd74449883ca5e47bde276df7634284
-      internalID: 1047902474
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ToiletF(3F)_Chase_11
+      name: AudiovisualRoom_Chase_14
       rect:
         serializedVersion: 2
         x: 96
-        y: 48
-        width: 32
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62daac27e5b31a94aa92e3a2afd18ef3
+      internalID: 909133160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_15
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 240
+        width: 48
         height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -362,82 +434,124 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 086725f1106cfb246a73c4b1978bc623
-      internalID: -203365802
+      spriteID: e8ae20dc94f375c4498d8ed03908d586
+      internalID: -1128459224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_12
+      name: AudiovisualRoom_Chase_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 240
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f66d08055d1dda41bf0acf9285b3202
+      internalID: -763797465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390fd7bc53beed04dbb04ffa3d406791
+      internalID: -2099992984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_18
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
+        y: 192
+        width: 48
         height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13bcd51fe345cce4ea1bc023fc921bbf
-      internalID: -945856134
+      spriteID: 215f1a52e1b32344295cd47dea1182d5
+      internalID: 909208784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_13
+      name: AudiovisualRoom_Chase_19
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
+        x: 48
+        y: 192
+        width: 48
         height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcba33c1268bc714d9c013c5d79fcce7
-      internalID: -965652295
+      spriteID: 9d9f7ae7cdc7bab4fa7c96e94e769226
+      internalID: -873121722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ToiletF(3F)_Chase_14
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57f90aebdae55fa4496a3973befb5ae1
-      internalID: -777727565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ToiletF(3F)_Chase_15
+      name: AudiovisualRoom_Chase_20
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
-        width: 32
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dadf548d52c8152429ab346adfc2d40d
+      internalID: 1173476331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_21
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 48
         height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -446,8 +560,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9663b22e01128e4599f38c12a07a936
-      internalID: -919993910
+      spriteID: 9d8a71486e3955541b0ec3f9fb29eae3
+      internalID: -745592575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa05bb64977239b4c8a1bf9a7941763e
+      internalID: -623788335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AudiovisualRoom_Chase_23
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309d1a452aed3da44ba861ec8072185d
+      internalID: -1887573383
       vertices: []
       indices: 
       edges: []
@@ -463,22 +619,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ToiletF(3F)_Chase_12: -945856134
-      ToiletF(3F)_Chase_15: -919993910
-      ToiletF(3F)_Chase_8: 373133700
-      ToiletF(3F)_Chase_6: -797676266
-      ToiletF(3F)_Chase_1: 2025464532
-      ToiletF(3F)_Chase_2: -654059704
-      ToiletF(3F)_Chase_7: -1936350957
-      ToiletF(3F)_Chase_13: -965652295
-      ToiletF(3F)_Chase_14: -777727565
-      ToiletF(3F)_Chase_3: 444796016
-      ToiletF(3F)_Chase_0: 760883485
-      ToiletF(3F)_Chase_11: -203365802
-      ToiletF(3F)_Chase_9: 1097950153
-      ToiletF(3F)_Chase_10: 1047902474
-      ToiletF(3F)_Chase_4: -785401556
-      ToiletF(3F)_Chase_5: -1915349268
+      AudiovisualRoom_Chase_4: 2081744956
+      AudiovisualRoom_Chase_10: -1170229342
+      AudiovisualRoom_Chase_2: -1350007525
+      AudiovisualRoom_Chase_3: 1839432058
+      AudiovisualRoom_Chase_21: -745592575
+      AudiovisualRoom_Chase_22: -623788335
+      AudiovisualRoom_Chase_12: -1389376918
+      AudiovisualRoom_Chase_8: -1756048698
+      AudiovisualRoom_Chase_0: 2025168591
+      AudiovisualRoom_Chase_14: 909133160
+      AudiovisualRoom_Chase_20: 1173476331
+      AudiovisualRoom_Chase_15: -1128459224
+      AudiovisualRoom_Chase_11: -1491773085
+      AudiovisualRoom_Chase_6: 1061453940
+      AudiovisualRoom_Chase_7: -630623843
+      AudiovisualRoom_Chase_17: -2099992984
+      AudiovisualRoom_Chase_23: -1887573383
+      AudiovisualRoom_Chase_1: 948879720
+      AudiovisualRoom_Chase_18: 909208784
+      AudiovisualRoom_Chase_9: 1970869753
+      AudiovisualRoom_Chase_16: -763797465
+      AudiovisualRoom_Chase_13: -1101098356
+      AudiovisualRoom_Chase_19: -873121722
+      AudiovisualRoom_Chase_5: -46887116
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

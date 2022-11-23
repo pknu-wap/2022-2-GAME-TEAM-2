@@ -40,7 +40,7 @@ public class ComputerRoomKeyEvent : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z)) //&& PlayerController.instance.GetAnimator().GetFloat("DirY") == 1f)
             {
-                InventoryManager.instance.GetItem("2-2��");
+                InventoryManager.instance.GetItem("2-2반");
 
                 if (!theEvent.switches[(int)SwitchType.ComputerRoomKeyEvent])
                     theEvent.switches[(int)SwitchType.ComputerRoomKeyEvent] = true;

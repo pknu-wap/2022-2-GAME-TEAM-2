@@ -43,6 +43,7 @@ public class InventoryManager : MonoBehaviour
         itemDictionary.Add("배전함 열쇠(3F)", new Item("배전함 열쇠(3F)", "3층 배전함의 열쇠이다."));
         itemDictionary.Add("2-1반", new Item("2-1반 열쇠", "2-1반의 열쇠"));
         itemDictionary.Add("2-2반", new Item("2-2반 열쇠", "2-2반의 열쇠"));
+        ItemDictionary.Add("칼", new Item("칼", "날카롭게 날이 선 칼이다."));
     }
 
     public void GetItem(string _itemName)
