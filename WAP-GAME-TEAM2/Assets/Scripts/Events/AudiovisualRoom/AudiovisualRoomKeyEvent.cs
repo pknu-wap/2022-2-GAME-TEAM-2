@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class AudiovisualRoomKeyEvent : ItemEvent
 {
-
-    
-
     protected override IEnumerator ItemEventCo()
     {
         theEvent.isEventIng = false;
