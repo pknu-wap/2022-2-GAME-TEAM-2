@@ -24,7 +24,7 @@ public class DefaultEvent : MonoBehaviour
     
     protected virtual void Update()
     {
-        if (!isCollision || DialogueManager.instance.talking || theEvent.isEventIng) return;
+        if (!isCollision || DialogueManager.instance.talking || ChoiceManager.instance.choiceIng ||theEvent.isEventIng) return;
         if (isInteracting && !DialogueManager.instance.talking)
         {
             isInteracting = false;

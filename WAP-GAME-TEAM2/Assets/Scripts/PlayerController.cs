@@ -21,7 +21,7 @@ public class PlayerController : MovingObject
     private AudioManager theAudio;
     [SerializeField] private string stepSound;
     
-#region Singleton
+    #region Singleton
     private void Awake()
     {
         if (instance == null)

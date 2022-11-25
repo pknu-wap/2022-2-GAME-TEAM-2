@@ -226,7 +226,18 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Scary
+    clip: {fileID: 8300000, guid: b83cdc83434dd1e48b88254925423d44, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+  - name: "\uADC0\uC2E0\uC6C3\uC74C"
+    clip: {fileID: 8300000, guid: 9902e4eea6befe34390f4ad6ae27c353, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
   nowPlayBGM: 0
+  chaseBGM: 0
 --- !u!81 &8282243632900502260
 AudioListener:
   m_ObjectHideFlags: 0

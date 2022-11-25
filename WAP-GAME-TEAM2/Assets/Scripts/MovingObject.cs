@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
-    
     public float speed;
     protected Vector2 vector;
 
@@ -83,5 +82,10 @@ public class MovingObject : MonoBehaviour
             return true;
         
         return false;
+    }
+
+    public Vector2 GetVector()
+    {
+        return vector;
     }
 }

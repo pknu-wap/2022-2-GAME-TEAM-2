@@ -4520,7 +4520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810885723389869149, guid: 365cdb64033b1cb4ab5eaa3c9b5a6372, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810885723389869150, guid: 365cdb64033b1cb4ab5eaa3c9b5a6372, type: 3}
       propertyPath: light
@@ -16765,7 +16765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   fFollowSpeed: 2
-  b_isFollow: 1
+  isFollow: 0
   _bound: {fileID: 1881295113}
 --- !u!114 &2104349219
 MonoBehaviour:

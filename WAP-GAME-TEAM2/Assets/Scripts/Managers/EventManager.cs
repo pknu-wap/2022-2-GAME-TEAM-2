@@ -10,7 +10,11 @@ public enum SwitchType
     SurpriseAt3F,           // 액자 연출,
     Opened21,               // 2 - 1 문 열림
     BloodEvent21,           // 2 - 1 연출 
+    KeyEvent21,             // 2 - 1 키 이벤트
     CpDoorOpened,           // 컴퓨터실 문 열림
+    Opened22,               // 2 - 2 문 열림
+    Event22,                // 2 - 2 책상 이벤트
+    SafeEvent22,            // 2 - 2 금고 이벤트
     BcDoorOpened,           // 방송실 문 열림
     StDoorOpened,           // 스튜디오 문 열림
     StFirstEntry,           // 스튜디오 첫 입장
@@ -21,6 +25,9 @@ public enum SwitchType
     ComputerRoomKeyEvent,   // 3층 컴퓨터실 금고 키 획득 이벤트
     Opened2F,               // 2층 문 열림 이벤트
     MusicRoomEvent,         // 2층 음악실 이벤트
+    KeyEvent11,             // 1 - 1 키 이벤트
+    DiaryEvent11,           // 1 - 1 일기장 획득
+    GhostEvent11,           // 2층 유령 이벤트
 }
 
 // 게임에서 일어나는 이벤트를 관리해주는 클래스 (이벤트가 한번만 일어나게 하기 위함)
