@@ -63,7 +63,7 @@ public class SafeNumberEvent : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         theNumber.ShowNumber(correctNumber);        // ���� �Ѱ��ֱ� 
-        yield return new WaitUntil(() => !theNumber.activeated);
+        yield return new WaitUntil(() => !theNumber.activated);
 
         if (theNumber.GetResult())
         {

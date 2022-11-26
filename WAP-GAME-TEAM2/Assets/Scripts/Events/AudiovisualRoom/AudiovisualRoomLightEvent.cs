@@ -9,8 +9,7 @@ public class AudiovisualRoomLightEvent : DefaultEvent
     private Light2D playerLight;
 
     [SerializeField] private Light2D light;
-
-    private AudioManager theAudio;
+    
     [SerializeField] private string lightOn;
     [SerializeField] private string scream;
 

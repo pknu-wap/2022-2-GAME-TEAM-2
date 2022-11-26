@@ -236,6 +236,11 @@ MonoBehaviour:
     volume: 0.7
     pitch: 1
     loop: 0
+  - name: "\uAE08\uACE0"
+    clip: {fileID: 8300000, guid: 3a289124545228e41933b549552077d5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   nowPlayBGM: 0
   chaseBGM: 0
 --- !u!81 &8282243632900502260

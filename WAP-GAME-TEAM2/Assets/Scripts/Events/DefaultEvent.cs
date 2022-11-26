@@ -5,6 +5,9 @@ using UnityEngine;
 public class DefaultEvent : MonoBehaviour
 {
     protected EventManager theEvent;
+    protected DialogueManager theDial;
+    protected AudioManager theAudio;
+
     protected bool isInteracting;
     protected bool isCollision;
     
@@ -15,10 +18,14 @@ public class DefaultEvent : MonoBehaviour
     public string[] Dial;
 
     public bool isExtraEvent;
+
+    public SwitchType theSwitch;
     
     protected virtual void Start()
     {
         theEvent = EventManager.instance;
+        theDial = DialogueManager.instance;
+        theAudio = AudioManager.instance;
         SwitchCheck();
     }
     
