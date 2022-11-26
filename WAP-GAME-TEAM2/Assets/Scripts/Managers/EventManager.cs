@@ -6,6 +6,8 @@ using UnityEngine;
 public enum SwitchType
 {
     StartEvent,
+    ArtRoomEvent,           // 미술실 이벤트
+    Opened3F,               // 3층 문 열림
     EntryEventAt3F,         // 3층 처음에 피를 봤을 때의 이벤트
     SurpriseAt3F,           // 액자 연출,
     Opened21,               // 2 - 1 문 열림
@@ -57,5 +59,11 @@ public class EventManager : MonoBehaviour
         }
     }
     #endregion
+
+    public void SetEvent(bool _b)
+    {
+        isEventIng = _b;
+        PlayerController.instance.IsPause = _b;
+    }
     
 }

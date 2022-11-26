@@ -241,6 +241,11 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Push
+    clip: {fileID: 8300000, guid: 7f22688a3ee3c0f42a6f0dbd7b3b2a7e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   nowPlayBGM: 0
   chaseBGM: 0
 --- !u!81 &8282243632900502260
