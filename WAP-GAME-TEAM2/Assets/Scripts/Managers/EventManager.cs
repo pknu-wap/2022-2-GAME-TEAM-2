@@ -21,6 +21,11 @@ public enum SwitchType
     AudiovisualRoomChaseEvent,  // 시청각실 추격 이벤트
     AudiovisualRoomLightEvent,  // 시청각실 추격 종료 이벤트
     AudiovisualRoomKeyEvent,    // 시청각실 아이템 획득 이벤트
+    TeacherOfficeFileEvent,     // 교무실 촌지 획득 이벤트
+    ChaseEvent1F,           // 1층 추격 이벤트
+    PoDoorOpend,            // 교장실 문 열림
+    PrincipalOfficeNumberEvent, // 교장실 금고 이벤트
+    PrincipalOfficeKeyEvent,    // 교장실 키 이벤트
 }
 
 // 게임에서 일어나는 이벤트를 관리해주는 클래스 (이벤트가 한번만 일어나게 하기 위함)

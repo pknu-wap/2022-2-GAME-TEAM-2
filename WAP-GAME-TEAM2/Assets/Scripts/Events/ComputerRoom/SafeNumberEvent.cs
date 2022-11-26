@@ -6,9 +6,15 @@ public class SafeNumberEvent : MonoBehaviour
 {
     private NumberSystem theNumber;
     private EventManager theEvent;
-    [SerializeField] private ComputerRoomKeyEvent theKeyEvent;
+    [SerializeField] private ItemEvent theKeyEvent;
 
     [SerializeField] private int correctNumber;
+
+    public SwitchType numberEventSwitch;
+    public SwitchType keyEventSwitch;
+
+    public string dir;
+    public float val;
 
     private bool isCollision;
     private bool isInteracting;
@@ -17,9 +23,15 @@ public class SafeNumberEvent : MonoBehaviour
     void Start()
     {
         theEvent = EventManager.instance;
-        if (theEvent.switches[(int)SwitchType.SafeNumberEvent])
+        if (EventManager.instance.switches[(int)numberEventSwitch])
         {
             gameObject.SetActive(false);
+
+            if (!EventManager.instance.switches[(int)keyEventSwitch])
+            {
+                theKeyEvent.gameObject.SetActive(true);
+                theKeyEvent.spriteObj.SetActive(true);
+            }
         }
 
         theNumber = FindObjectOfType<NumberSystem>();
@@ -48,7 +60,7 @@ public class SafeNumberEvent : MonoBehaviour
     {
         if (isCollision && !isInteracting)
         {
-            if (Input.GetKeyDown(KeyCode.Z))// && PlayerController.instance.GetAnimator().GetFloat("DirY") == 1f)
+            if (Input.GetKeyDown(KeyCode.Z) && PlayerController.instance.GetPlayerDir(dir) == val)
             {
                 StartCoroutine(NumberCoroutine());
             }
@@ -60,22 +72,23 @@ public class SafeNumberEvent : MonoBehaviour
         PlayerController.instance.IsPause = true;
         isInteracting = true;
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
 
-        theNumber.ShowNumber(correctNumber);        // ���� �Ѱ��ֱ� 
+        theNumber.ShowNumber(correctNumber);
         yield return new WaitUntil(() => !theNumber.activeated);
 
+        
         if (theNumber.GetResult())
         {
-            if (!theEvent.switches[(int)SwitchType.SafeNumberEvent])
-                theEvent.switches[(int)SwitchType.SafeNumberEvent] = true;
+            if (!EventManager.instance.switches[(int)numberEventSwitch])
+                EventManager.instance.switches[(int)numberEventSwitch] = true;
 
             theKeyEvent.gameObject.SetActive(true);
             theKeyEvent.spriteObj.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
 
-        PlayerController.instance.IsPause = false;
+        PlayerController.instance.IsPause = false;  
         isInteracting = false;
     }
 }
