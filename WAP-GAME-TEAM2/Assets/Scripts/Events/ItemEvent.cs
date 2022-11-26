@@ -6,13 +6,12 @@ using UnityEngine;
 public class ItemEvent : MonoBehaviour
 {  
     protected EventManager theEvent; 
-    protected bool isCollision;
     protected bool isInteraction;
 
     public GameObject spriteObj;
     
     public bool isExtraEvent;
-    
+
     public LayerMask layerMask;
 
     public string itemName;
@@ -28,12 +27,10 @@ public class ItemEvent : MonoBehaviour
     {
         theEvent = EventManager.instance;
         SwitchCheck();
-
-        isCollision = false;
     }
     protected void Update()
     {
-        if (!isCollision || DialogueManager.instance.talking || theEvent.isEventIng) return;
+        if (DialogueManager.instance.talking || theEvent.isEventIng) return;
         if (isInteraction && !DialogueManager.instance.talking)
         {
             isInteraction = false;
@@ -75,16 +72,6 @@ public class ItemEvent : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        isCollision = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        isCollision = false;
-    }
     
     protected virtual bool CanPlayerInteract()
     {
@@ -105,6 +92,4 @@ public class ItemEvent : MonoBehaviour
         
         return false;
     }
-    
-   
 }

@@ -117,4 +117,9 @@ public class PlayerController : MovingObject
         float f_vector = animator.GetFloat(_dir);
         return f_vector;
     }
+
+    public Vector2 GetVector()
+    {
+        return vector;
+    }
 }

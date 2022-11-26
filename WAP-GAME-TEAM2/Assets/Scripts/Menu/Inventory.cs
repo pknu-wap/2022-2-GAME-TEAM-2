@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     public Menu theMenu;
 
     private List<Item> inventoryItemList;
-    private InventorySlot[] slots; // 인벤토리 슬롯들
+    public InventorySlot[] slots; // 인벤토리 슬롯들
 
     public Text Description_Text; // 부연 설명
     
@@ -24,7 +24,6 @@ public class Inventory : MonoBehaviour
         theAudio = AudioManager.instance;
         theInven = InventoryManager.instance;
         inventoryItemList = theInven.InventoryItemList;
-        slots = tf.GetComponentsInChildren<InventorySlot>();
         ShowItems();
     }
 
@@ -43,6 +42,7 @@ public class Inventory : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            slots[selectedItem].FocusPanel.SetActive(false);
             if (selectedItem > 1)
                 selectedItem -= 2;
             else
@@ -52,6 +52,7 @@ public class Inventory : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            slots[selectedItem].FocusPanel.SetActive(false);
             if (selectedItem < inventoryItemList.Count - 2)
                 selectedItem += 2;
             else
@@ -61,6 +62,7 @@ public class Inventory : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            slots[selectedItem].FocusPanel.SetActive(false);
             if (selectedItem > 0)
                 selectedItem--;
             else
@@ -70,6 +72,7 @@ public class Inventory : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            slots[selectedItem].FocusPanel.SetActive(false);
             if (selectedItem < inventoryItemList.Count - 1)
                 selectedItem++;
             else

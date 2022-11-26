@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComputerRoomKeyEvent : ItemEvent
+public class AudiovisualRoomKeyEvent : ItemEvent
 {
     protected override IEnumerator ItemEventCo()
     {

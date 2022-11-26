@@ -71,6 +71,7 @@ public class SafeNumberEvent : MonoBehaviour
                 theEvent.switches[(int)SwitchType.SafeNumberEvent] = true;
 
             theKeyEvent.gameObject.SetActive(true);
+            theKeyEvent.spriteObj.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
 

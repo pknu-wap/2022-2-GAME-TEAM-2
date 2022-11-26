@@ -2,60 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToiletFChaseEvent : MonoBehaviour
+public class ToiletFChaseEvent : DefaultEvent
 {
-    private EventManager theEvent;
-    [SerializeField] private ToiletFKeyEvent theKeyEvent;
+    [SerializeField] private ItemEvent itemEvent;
 
-    private bool isCollision;
-    private AIController chaser;
-    
-    // Start is called before the first frame update
-    void Start()
+    private PlayerController thePlayer;
+    [SerializeField] private AIController chaser;
+
+    public string[] Dials;
+    public string heartBeatSound;
+    public string surpriseSound;
+
+    protected override void SwitchCheck()
     {
-        theEvent = EventManager.instance;
-        if (theEvent.switches[(int)SwitchType.ToiletFChaseEvent])
+        if (EventManager.instance.switches[(int)SwitchType.ToiletFChaseEvent])
         {
             gameObject.SetActive(false);
         }
-
-        isCollision = false;
-        chaser = FindObjectOfType<AIController>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override IEnumerator ExtraEventCo()
     {
-        if (collision.gameObject.CompareTag("Player"))
-            isCollision = true;
-    }
+        yield return new WaitUntil(() => DialogueManager.instance.nextDialogue == true);
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-            isCollision = false;
-    }
+        thePlayer = PlayerController.instance;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (isCollision)
-        {
-            if (Input.GetKeyDown(KeyCode.Z))// && PlayerController.instance.GetAnimator().GetFloat("DirX") == 1f)
-                StartCoroutine(ChaseCoroutine());
-        }
-    }
+        theEvent.isEventIng = true;
+        thePlayer.IsPause = true;
 
-    IEnumerator ChaseCoroutine()
-    {
+        AudioManager.instance.PlaySFX(surpriseSound);
         yield return new WaitForSeconds(1f);
 
-        if (!theEvent.switches[(int)SwitchType.ToiletFChaseEvent])
-            theEvent.switches[(int)SwitchType.ToiletFChaseEvent] = true;
+        AudioManager.instance.PlaySFX(heartBeatSound);
+        yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlaySFX(heartBeatSound);
+        yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlaySFX(heartBeatSound);
+        yield return new WaitForSeconds(1.5f);
 
-        theKeyEvent.gameObject.SetActive(true);
+        theEvent.isEventIng = false;
+        thePlayer.IsPause = false;
+
+        yield return new WaitForSeconds(1f);
 
         chaser.chase = true;
 
+        itemEvent.gameObject.SetActive(true);
+        itemEvent.spriteObj.gameObject.SetActive(true);
+
         gameObject.SetActive(false);
+
+        yield break;
     }
 }
