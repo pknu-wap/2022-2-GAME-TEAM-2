@@ -33,7 +33,8 @@ public class DefaultEvent : MonoBehaviour
         if (!CanPlayerInteract())
             return;
         
-        if (!isCollision || DialogueManager.instance.talking || ChoiceManager.instance.choiceIng ||theEvent.isEventIng) return;
+        if (!isCollision || DialogueManager.instance.talking || ChoiceManager.instance.choiceIng 
+            ||theEvent.isEventIng) return;
         if (isInteracting && !DialogueManager.instance.talking)
         {
             isInteracting = false;

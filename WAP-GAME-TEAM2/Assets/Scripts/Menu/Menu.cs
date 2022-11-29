@@ -2,9 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+    public static Menu instance;
+    
     private Animator _anim;
     private AudioManager theAudio;
     private PlayerController thePlayer;
@@ -16,11 +20,16 @@ public class Menu : MonoBehaviour
     public GameObject[] panels; // 활성화 시킬 패널 
 
     public GameObject[] menus_Tab; // 활성화시킬 인벤토리, 통화, 메시지 탭 오브젝트
-    
+
     private int selectedTab; // 선택된 탭
         
     public bool menuActivated { get; set; } // 메뉴 활성화 여부
     public bool otherActivated { get; set; } // 인벤토리, 통화, 메시지 탭 활성화 여부
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -88,8 +97,16 @@ public class Menu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             theAudio.PlaySFX(key_sound);
-            otherActivated = true;
-            menus_Tab[selectedTab].SetActive(true);
+            if (selectedTab < 3)
+            {
+                otherActivated = true;
+                menus_Tab[selectedTab].SetActive(true);
+            }
+            else
+            {
+                PlayerController.instance.transform.position = new Vector2(-10f, 1.5f);
+                SceneManager.LoadScene("Title");
+            }
         }
     }
 }

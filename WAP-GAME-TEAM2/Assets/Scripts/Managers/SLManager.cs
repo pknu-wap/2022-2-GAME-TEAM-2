@@ -31,6 +31,8 @@ public class SLManager : MonoBehaviour
     
     public static SLManager instance;
 
+    public string sceneName;
+
     #region  SingleTon
 
     void Awake()
@@ -82,6 +84,7 @@ public class SLManager : MonoBehaviour
         PlayerData data = JsonConvert.DeserializeObject<PlayerData>(jdata);
         PlayerController.instance.transform.position = data.player_Pos;
         AudioManager.instance.nowPlayBGM = data.now_PlayingBGM;
+        sceneName = data.cur_SceneName;
         
         List<Item> invenItemList = InventoryManager.instance.InventoryItemList; // 현재 플레이어가 소유한 아이템 리스트
         Dictionary<string, Item> ItemList = InventoryManager.instance.ItemDictionary; // 아이템 리스트
@@ -98,9 +101,10 @@ public class SLManager : MonoBehaviour
             EventManager.instance.switches[i] = data.event_Switches[i]; 
         }
         
-        for (int i = 0; i < data.event_Switches.Length; i++)
+        for (int i = 0; i < data.diaryObtained.Length; i++)
         {
-            EventManager.instance.switches[i] = data.diaryObtained[i]; 
+            EventManager.instance.diaryObtained[i] = data.diaryObtained[i]; 
         }
+        
     }
 }
