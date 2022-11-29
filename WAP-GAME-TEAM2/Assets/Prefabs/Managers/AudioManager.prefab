@@ -81,6 +81,11 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Wrong
+    clip: {fileID: 8300000, guid: 3c765ac768a5f114690d75d2c62ede42, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   - name: Decision
     clip: {fileID: 8300000, guid: 13f52f005471b4849ab70d9149a1edef, type: 3}
     volume: 1

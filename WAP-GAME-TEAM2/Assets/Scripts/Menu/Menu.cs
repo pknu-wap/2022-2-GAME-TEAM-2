@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
     private Animator _anim;
     private AudioManager theAudio;
     private PlayerController thePlayer;
+    private EventManager theEvent;
     public string appear_sound;
     public string key_sound;
 
@@ -18,21 +19,20 @@ public class Menu : MonoBehaviour
     
     private int selectedTab; // 선택된 탭
         
-    private bool menuActivated; // 메뉴 활성화 여부
-    private bool otherActivated; // 인벤토리, 통화, 메시지 탭 활성화 여부
-    
-    public bool OtherActivated { set => otherActivated = value; }
+    public bool menuActivated { get; set; } // 메뉴 활성화 여부
+    public bool otherActivated { get; set; } // 인벤토리, 통화, 메시지 탭 활성화 여부
 
     private void Start()
     {
         _anim = GetComponent<Animator>();
         theAudio = AudioManager.instance;
         thePlayer = PlayerController.instance;
+        theEvent = EventManager.instance;
     }
 
     private void Update()
     {
-        if (otherActivated) return;
+        if (otherActivated || theEvent.isEventIng || DialogueManager.instance.talking || ChoiceManager.instance.choiceIng) return;
         if (Input.GetKeyDown(KeyCode.X))
         {
             menuActivated = !menuActivated;
@@ -42,6 +42,7 @@ public class Menu : MonoBehaviour
                 theAudio.PlaySFX(appear_sound);
                 bg_Panel.SetActive(true);
                 thePlayer.IsPause = true;
+                theEvent.isWorking = true;
                 _anim.SetBool("Appear", true);
                 selectedTab = 0;
                 panels[selectedTab].SetActive(true);
@@ -52,6 +53,7 @@ public class Menu : MonoBehaviour
                 theAudio.PlaySFX(appear_sound);
                 bg_Panel.SetActive(false);
                 thePlayer.IsPause = false;
+                theEvent.isWorking = false;
                 _anim.SetBool("Appear", false);
                 panels[selectedTab].SetActive(false);
             }

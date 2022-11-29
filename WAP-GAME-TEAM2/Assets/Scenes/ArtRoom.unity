@@ -590,13 +590,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1630985327567742855, guid: c628b03862a0d6c429ee78f416f6366b, type: 3}
+      propertyPath: Dial.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630985327567742855, guid: c628b03862a0d6c429ee78f416f6366b, type: 3}
       propertyPath: Dial.Array.data[0]
       value: "-- \uC548\uB0B4\uC0AC\uD56D --\n"
       objectReference: {fileID: 0}
     - target: {fileID: 1630985327567742855, guid: c628b03862a0d6c429ee78f416f6366b, type: 3}
       propertyPath: Dial.Array.data[1]
-      value: "\uC4F0\uB358 \uBB3C\uAC74\uC744 \uC81C\uC790\uB9AC\uC5D0 \uB194\uB46C\uC8FC\uAE38
-        \uBC14\uB78D\uB2C8\uB2E4.\n\n"
+      value: "\uC0AC\uC6A9\uD55C \uBB3C\uAC74\uC740 \uC81C\uC790\uB9AC\uC5D0 \uB193\uC544\uC8FC\uAE38
+        \uBC14\uB78D\uB2C8\uB2E4."
       objectReference: {fileID: 0}
     - target: {fileID: 7799760612806410332, guid: c628b03862a0d6c429ee78f416f6366b, type: 3}
       propertyPath: m_Name
@@ -3352,7 +3356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810885723389869149, guid: 365cdb64033b1cb4ab5eaa3c9b5a6372, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8810885723389869150, guid: 365cdb64033b1cb4ab5eaa3c9b5a6372, type: 3}
       propertyPath: light

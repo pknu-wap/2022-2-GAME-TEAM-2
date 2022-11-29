@@ -33,7 +33,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             theAudio.PlaySFX(key_sound);
-            theMenu.OtherActivated = false;
+            theMenu.otherActivated = false;
             gameObject.SetActive(false);
         }
         

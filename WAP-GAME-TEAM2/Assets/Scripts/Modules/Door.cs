@@ -8,8 +8,9 @@ public class Door : MonoBehaviour
     public string moveSound;
     
     public Vector2 toMove;
-    
-    public string lockDial = "열리지 않는다.";
+
+    [TextArea(1, 2)] 
+    public string lockDial;
     public string openDial;
 
     public string keyItemName;
@@ -30,7 +31,7 @@ public class Door : MonoBehaviour
             doorOpened = true;
         isCollision = false;
     }
-    protected void Update()
+    protected virtual void Update()
     {
         if (!isCollision || DialogueManager.instance.talking) return;
         

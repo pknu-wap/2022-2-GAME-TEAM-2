@@ -28,20 +28,18 @@ public class ItemEvent : MonoBehaviour
         theEvent = EventManager.instance;
         SwitchCheck();
     }
-    protected void Update()
+    protected virtual void Update()
     {
+        if (!CanPlayerInteract())
+            return;
         if (DialogueManager.instance.talking || theEvent.isEventIng) return;
         if (isInteraction && !DialogueManager.instance.talking)
         {
             isInteraction = false;
             return;
         }
-        
-        if (!CanPlayerInteract())
-            return;
-
         if (!Input.GetKeyDown(KeyCode.Z)) return;
-
+        
         AudioManager.instance.PlaySFX(getSound); 
         DialogueManager.instance.ShowText(getDial);
         InventoryManager.instance.GetItem(itemName);

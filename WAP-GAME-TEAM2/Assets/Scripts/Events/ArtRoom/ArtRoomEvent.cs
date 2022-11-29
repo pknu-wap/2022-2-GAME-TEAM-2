@@ -36,6 +36,8 @@ public class ArtRoomEvent : MonoBehaviour
                 float DisY = Mathf.Abs(objPos.y - targetPos[j].y);
                 if (DisX < 0.001 && DisY < 0.001)
                     result[j] = true;
+                else
+                    result[j] = false;
             }
         }
 

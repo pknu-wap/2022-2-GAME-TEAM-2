@@ -1136,11 +1136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorOpened
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorSwitch
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: keyItemName
@@ -3462,12 +3462,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c0dfaa8ee51624d9faae02dd9cc6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: DirY
-  val: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   Dial:
   - "\uBB38\uC744 \uC5F4 \uC218 \uC788\uAC8C \uD558\uB294 \uBC30\uC804\uD568\uC774\uB2E4."
   - "\uC5F4\uB824\uBA74 \uC5F4\uC1E0\uAC00 \uD544\uC694\uD558\uB2E4."
   isExtraEvent: 1
+  theSwitch: 0
   objSprite: {fileID: 1196489631}
   switchType: 11
   openSound: "\uBC29\uD654\uBB38\uAC1C\uBC29"
@@ -5135,7 +5137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorSwitch
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: keyItemName
@@ -9571,7 +9573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorSwitch
-      value: 1
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: keyItemName
@@ -16071,6 +16073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key_sound: Decision
   theMenu: {fileID: 138574020}
+  slots: []
   Description_Text: {fileID: 1730611373}
   tf: {fileID: 916455860}
 --- !u!114 &2005021316
@@ -19505,11 +19508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorOpened
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorSwitch
-      value: 3
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: keyItemName
