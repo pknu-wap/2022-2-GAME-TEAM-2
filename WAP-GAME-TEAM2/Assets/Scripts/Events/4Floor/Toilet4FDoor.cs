@@ -58,10 +58,11 @@ public class Toilet4FDoor : Door
         {
             yield return new WaitForSeconds(0.5f);
             theAudio.PlaySFX(fireSound);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
             theDial.ShowText(openDials[1]);
             yield return new WaitUntil(() => theDial.nextDialogue == true);
             EventManager.instance.switches[(int)doorSwitch] = true;
+            InventoryManager.instance.DeleteItem("알코올램프");
             EventManager.instance.SetEvent(false);
             StartCoroutine(MoveCo());
         }

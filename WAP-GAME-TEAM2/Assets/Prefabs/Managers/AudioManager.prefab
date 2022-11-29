@@ -66,6 +66,11 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Fire
+    clip: {fileID: 8300000, guid: 79489dd15a6941f4da7159ab0139c9e1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   - name: 4Floor
     clip: {fileID: 8300000, guid: 23d84b162e2c6544697fd4f4a8df8155, type: 3}
     volume: 1
@@ -248,6 +253,16 @@ MonoBehaviour:
     loop: 0
   - name: Push
     clip: {fileID: 8300000, guid: 7f22688a3ee3c0f42a6f0dbd7b3b2a7e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Diary
+    clip: {fileID: 8300000, guid: 68515ef013ddbe146a41d3aec263e47c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uCFF5"
+    clip: {fileID: 8300000, guid: 3900767b83a4c754885bfe7a79d71538, type: 3}
     volume: 1
     pitch: 1
     loop: 0

@@ -10872,7 +10872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   fFollowSpeed: 2
-  isFollow: 0
+  isFollow: 1
   _bound: {fileID: 380894086}
 --- !u!1 &2050352417
 GameObject:

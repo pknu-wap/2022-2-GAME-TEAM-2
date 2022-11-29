@@ -10,6 +10,7 @@ public class PushObj : MovingObject
     
     private bool isCollision;
 
+    public int objNum;
     public string pushSound;
 
     public ArtRoomEvent are;
@@ -48,7 +49,7 @@ public class PushObj : MovingObject
                 yield return new WaitForSeconds(0.005f);
             }
         }
-        are.CheckResult();
+        are.CheckResult(objNum);
         theEvent.isEventIng = false;
         PlayerController.instance.IsPause = false;
         currentWalkCount = 0;

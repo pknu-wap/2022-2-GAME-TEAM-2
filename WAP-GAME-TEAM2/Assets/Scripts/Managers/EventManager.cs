@@ -7,12 +7,13 @@ public enum SwitchType
 {
     DefaultEvent,           // 조건체크를 위한 디폴트 스위치
     StartEvent,             // 3-1 시작이벤트
-    Diary0305,             // 3-1 시작이벤트
+    Diary0305,              // 첫 번째 일기장 획득
     ScrItemEvent1,          // 과학실 알코올램프 획득
     ScrItemEvent2,          // 과학실 과산화수소 획득
     OpenedToilet,           // 4층 남자화장실 문 열림
     Opened32,               // 3 - 2 문열림
     KeyEvent32,             // 3 - 2 키획득
+    Diary0415,              // 3 - 2 일기장획득
     OpenedArtRoom,          // 미술실 문열림
     ArtRoomEvent,           // 미술실 이벤트
     Opened3F,               // 3층 문 열림
@@ -54,6 +55,7 @@ public class EventManager : MonoBehaviour
     public bool isWorking;
     
     #region Singleton
+
     private void Awake()
     {
         if (instance == null)
@@ -65,7 +67,7 @@ public class EventManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    } 
     #endregion
 
     public void SetEvent(bool _b)

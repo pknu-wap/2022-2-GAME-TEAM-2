@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ии???? ??????? Inspector??? ?????? ??ве?.
+// ?????? ??????? Inspector??? ?????? ?????.
 [System.Serializable]
 public class Sound
 {
@@ -103,6 +103,11 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
+    }
+    public void PlayBGM(int index)
+    {
+        nowPlayBGM = index;
+        sounds[index].Play();
     }
     
     public void PlaySFX(string _name)

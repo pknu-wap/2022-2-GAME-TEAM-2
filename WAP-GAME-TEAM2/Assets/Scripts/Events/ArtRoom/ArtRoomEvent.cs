@@ -16,7 +16,7 @@ public class ArtRoomEvent : MonoBehaviour
 
     public SwitchType artRoomSwitch;
 
-    public bool[] result;
+    public int[] result;
 
     void Start()
     {
@@ -25,26 +25,22 @@ public class ArtRoomEvent : MonoBehaviour
         theEvent = EventManager.instance;
     }
 
-    public void CheckResult()
-    {
-        for (int i = 0; i < pushObj.Length; i++)
+    public void CheckResult(int num)
+    { 
+        Vector2 objPos = pushObj[num].transform.position;
+        for (int i = 0; i < targetPos.Length; i++)
         {
-            Vector2 objPos = pushObj[i].transform.position;
-            for (int j = 0; j < targetPos.Length; j++)
-            {
-                float DisX = Mathf.Abs(objPos.x - targetPos[j].x);
-                float DisY = Mathf.Abs(objPos.y - targetPos[j].y);
-                if (DisX < 0.001 && DisY < 0.001)
-                    result[j] = true;
-                else
-                    result[j] = false;
-            }
+            if (result[i] == num) result[i] = -1;
+            float DisX = Mathf.Abs(objPos.x - targetPos[i].x);
+            float DisY = Mathf.Abs(objPos.y - targetPos[i].y);
+            if (DisX < 0.001 && DisY < 0.001)
+                result[i] = num;
         }
 
         for (int i = 0; i < result.Length; i++)
         {
-            if (!result[i]) break;
-            if (i == (result.Length - 1) && result[i])
+            if (result[i] < 0) break;
+            if (i == (result.Length - 1) && result[i] >= 0)
                 StartCoroutine(ArtRoomCo());
         }
     }

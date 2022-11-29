@@ -33,12 +33,14 @@ public class InventoryManager : MonoBehaviour
         itemDictionary = new Dictionary<string, Item>();
         itemDictionaryInit();
         inventoryItemList = new List<Item>();
+        GetItem("미술실 열쇠");
     }
 
     private void itemDictionaryInit()
     {
         itemDictionary.Add("조건 체크", new Item("조건 체크", "")); // 문 조건 체크를 위한 디폴트 아이템
         itemDictionary.Add("과산화수소", new Item("과산화수소", "어떤 얼룩도 깨끗하게 지워주는 아이템이다."));
+        itemDictionary.Add("알코올램프", new Item("알코올램프", "불을 붙힐 수 있는 알코올램프이다."));
         itemDictionary.Add("3-2반 열쇠", new Item("3-2반 열쇠", "3-2반 열쇠이다."));
         itemDictionary.Add("미술실 열쇠", new Item("미술실 열쇠", "미술실의 열쇠이다."));
         itemDictionary.Add("방송실 열쇠", new Item("방송실 열쇠", "방송실의 열쇠이다."));
@@ -56,6 +58,19 @@ public class InventoryManager : MonoBehaviour
         if (!inventoryItemList.Contains(itemDictionary[_itemName]))
         {
             inventoryItemList.Add(itemDictionary[_itemName]);
+        }
+    }
+    
+    public void DeleteItem(string _itemName)
+    {
+        Item forDeleteItem = ItemDictionary[_itemName];
+        for (int i = 0; i < inventoryItemList.Count; i++)
+        {
+            if (inventoryItemList[i] == forDeleteItem)
+            {
+                inventoryItemList.Remove(forDeleteItem);
+                return;
+            }
         }
     }
 

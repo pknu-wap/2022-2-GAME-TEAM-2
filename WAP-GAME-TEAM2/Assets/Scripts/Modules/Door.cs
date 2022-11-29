@@ -54,8 +54,10 @@ public class Door : MonoBehaviour
             // 키 체크
             if (InventoryManager.instance.SearchItem(keyItemName))
             {
+                AudioManager.instance.PlaySFX(lockSound);
                 EventManager.instance.switches[(int)doorSwitch] = true;
                 DialogueManager.instance.ShowText(openDial);
+                InventoryManager.instance.DeleteItem(keyItemName);
                 StartCoroutine(MoveCo());
             }
             // 키가 없으면 잠겨있다.
@@ -63,9 +65,9 @@ public class Door : MonoBehaviour
             {
                 AudioManager.instance.PlaySFX(lockSound);
                 DialogueManager.instance.ShowText(lockDial);
-                isInteracting = true;
             }
         }
+        isInteracting = true;
     }
     
     protected virtual IEnumerator MoveCo()

@@ -15,15 +15,17 @@ public class SLManager : MonoBehaviour
         public string cur_SceneName;
         public List<string> inventoryItemList; // 가지고 있는 아이템의 이름 저장.
         public bool[] event_Switches;
+        public bool[] diaryObtained;
 
         public PlayerData(Vector2 _playerPos, int _nowPlayingBGM, string _curSceneName, List<string> _inventoryItemList,
-            bool[] _eventSwitches)
+            bool[] _eventSwitches,  bool[] _diaryObtained)
         {
             player_Pos = _playerPos;
             now_PlayingBGM = _nowPlayingBGM;
             cur_SceneName = _curSceneName;
             inventoryItemList = _inventoryItemList;
             event_Switches = _eventSwitches;
+            diaryObtained = _diaryObtained;
         }
     }
     
@@ -58,6 +60,7 @@ public class SLManager : MonoBehaviour
         int nowPlayingBGM = AudioManager.instance.nowPlayBGM;
         string curSceneName = SceneManager.GetActiveScene().name;
         bool[] eventSwitches = EventManager.instance.switches;
+        bool[] diaryObtained = EventManager.instance.diaryObtained;
         
         List<Item> inventoryItemList = InventoryManager.instance.InventoryItemList;
         List<string> invenItemList = new List<string>();
@@ -68,7 +71,7 @@ public class SLManager : MonoBehaviour
             invenItemList.Add(inventoryItemList[i].itemName);
         }
         
-        PlayerData data = new PlayerData(playerPos, nowPlayingBGM, curSceneName, invenItemList, eventSwitches);
+        PlayerData data = new PlayerData(playerPos, nowPlayingBGM, curSceneName, invenItemList, eventSwitches, diaryObtained);
         string jdata = JsonConvert.SerializeObject(data, settings);
         File.WriteAllText(Application.dataPath + "/Save.json", jdata);
     }
@@ -93,6 +96,11 @@ public class SLManager : MonoBehaviour
         for (int i = 0; i < data.event_Switches.Length; i++)
         {
             EventManager.instance.switches[i] = data.event_Switches[i]; 
+        }
+        
+        for (int i = 0; i < data.event_Switches.Length; i++)
+        {
+            EventManager.instance.switches[i] = data.diaryObtained[i]; 
         }
     }
 }
