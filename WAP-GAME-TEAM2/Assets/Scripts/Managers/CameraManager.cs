@@ -25,6 +25,9 @@ public class CameraManager : MonoBehaviour
 
     private Camera theCamera;
 
+    [SerializeField][Range(0.01f, 0.1f)] private float shakeRange = 0.05f;
+    [SerializeField][Range(0.1f, 1f)] private float duration = 0.5f;
+
     private void Awake()
     {
         if (instance == null)
@@ -67,5 +70,29 @@ public class CameraManager : MonoBehaviour
         _bound = _newBound;
         v_minBound = _bound.bounds.min;
         v_maxBound = _bound.bounds.max;
+    }
+
+    public void Shake()
+    {
+        b_isFollow = false;
+
+        StartCoroutine(Shake(0.5f, 0.5f));
+    }
+
+    public IEnumerator Shake(float _amount, float _duration)
+    {
+        Vector3 originPos = transform.position;
+
+        float timer = 0;
+        while (timer <= _duration)
+        {
+            transform.localPosition = (Vector3)UnityEngine.Random.insideUnitCircle * _amount + originPos;
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localPosition = originPos;
+        b_isFollow = true;
     }
 }

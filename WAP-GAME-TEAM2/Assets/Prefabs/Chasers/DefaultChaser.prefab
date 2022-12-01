@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1109366389
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1704961952, guid: 92490914f56133049a8462d056121761, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.04
   walkCount: 25
+  canMove: 1
   animator: {fileID: 319763219115364084}
   boxCollider: {fileID: 319763219115364085}
   layerMask:
@@ -154,3 +155,9 @@ MonoBehaviour:
     m_Bits: 64
   inter_MoveWaitTime: 0.001
   chase: 1
+  bottomLeft: {x: 0, y: 0}
+  topRight: {x: 0, y: 0}
+  startPos: {x: 0, y: 0}
+  targetPos: {x: 0, y: 0}
+  FinalNodeList: []
+  FinalDirectionList: []

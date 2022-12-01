@@ -36,7 +36,8 @@ public class DefaultEvent : MonoBehaviour
         
         if (!Input.GetKeyDown(KeyCode.Z)) return;
         
-        DialogueManager.instance.ShowText(Dial);
+        if(Dial.Length > 0)
+            DialogueManager.instance.ShowText(Dial);
         isInteracting = true;
         if (isExtraEvent)
         {

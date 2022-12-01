@@ -76,6 +76,10 @@ public class Door : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         PlayerController.instance.transform.position = toMove;
         PlayerController.instance.isSceneChange = true;
+
+        SpawnManager.instance.spawnPoint = toMove;
+        SpawnManager.instance.sceneName = sceneName;
+
         SceneManager.LoadScene(sceneName);
     }
 
