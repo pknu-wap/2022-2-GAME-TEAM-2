@@ -22,7 +22,7 @@ public class StartEvent : MonoBehaviour
     
     void Start()
     {
-        flashLight = FindObjectOfType<Light2D>();
+        flashLight = PlayerController.instance.flashLight;
         theAudio = AudioManager.instance;
         theDial = DialogueManager.instance;
         theFade = FadeManager.instance;

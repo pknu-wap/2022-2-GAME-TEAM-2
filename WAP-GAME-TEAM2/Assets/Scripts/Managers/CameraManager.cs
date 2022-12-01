@@ -74,7 +74,7 @@ public class CameraManager : MonoBehaviour
 
     public void Shake()
     {
-        b_isFollow = false;
+        isFollow = false;
 
         StartCoroutine(Shake(0.5f, 0.5f));
     }
@@ -93,6 +93,6 @@ public class CameraManager : MonoBehaviour
         }
 
         transform.localPosition = originPos;
-        b_isFollow = true;
+        isFollow = true;
     }
 }

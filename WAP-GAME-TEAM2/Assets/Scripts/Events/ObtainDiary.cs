@@ -48,7 +48,7 @@ public class ObtainDiary : MonoBehaviour
             isCoroutine = false;
             yield break;
         }
-        
+
         if (DialogueManager.instance.talking || theEvent.switches[(int)DiarySwitch]
                                              || theEvent.isEventIng)
         {

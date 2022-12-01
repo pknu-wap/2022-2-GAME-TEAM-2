@@ -8,6 +8,8 @@ public class ItemEvent2 : MonoBehaviour
     protected DialogueManager theDial;
     protected ChoiceManager theChoice;
 
+    protected bool isCollision;
+
     public bool isExtraEvent;
 
     public LayerMask layerMask;
@@ -18,12 +20,12 @@ public class ItemEvent2 : MonoBehaviour
 
     public string choiceDial;
     public string[] choices;
-    
+
     public SwitchType ItemSwitch;
 
     private bool isInteracting;
-    protected virtual IEnumerator ItemEventCo() { yield break;}
-    
+    protected virtual IEnumerator ItemEventCo() { yield break; }
+
     protected void Start()
     {
         theEvent = EventManager.instance;
@@ -33,13 +35,14 @@ public class ItemEvent2 : MonoBehaviour
     }
     protected virtual void Update()
     {
-        if (!CanPlayerInteract()) return;
-        if (theDial.talking || theChoice.choiceIng ||theEvent.isEventIng) return;
+        if (!isCollision || theDial.talking || theChoice.choiceIng || theEvent.isEventIng
+            || theEvent.isWorking || ChoiceManager.instance.choiceIng) return;
         if (isInteracting && !DialogueManager.instance.talking) // 대사 끝날때 z를 누른 프레임과 동일한 update 프레임에 z가 눌리는 일 방지.
         {
             isInteracting = false;
             return;
         }
+        if (!CanPlayerInteract()) return;
         if (!Input.GetKeyDown(KeyCode.Z)) return;
 
         isInteracting = true;
@@ -48,6 +51,7 @@ public class ItemEvent2 : MonoBehaviour
 
     private IEnumerator dialCo()
     {
+        theEvent.SetEvent(true);
         int len = getDials.Length;
         for (int i = 0; i < len - 1; i++)
         {
@@ -69,10 +73,13 @@ public class ItemEvent2 : MonoBehaviour
             }
             else
             {
+                theEvent.SetEvent(false);
                 gameObject.SetActive(false);
             }
-            ;
+
         }
+        theEvent.SetEvent(false);
+
     }
 
     protected virtual void SetSwitch()
@@ -87,7 +94,7 @@ public class ItemEvent2 : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    
+
     protected virtual bool CanPlayerInteract()
     {
         Vector2 vector = PlayerController.instance.GetVector();
@@ -104,7 +111,17 @@ public class ItemEvent2 : MonoBehaviour
 
         if (hit.collider.gameObject == this.gameObject)
             return true;
-        
+
         return false;
     }
+
+    protected void OnTriggerEnter2D(Collider2D col)
+    {
+        isCollision = true;
+    }
+    protected void OnTriggerExit2D(Collider2D other)
+    {
+        isCollision = false;
+    }
+
 }

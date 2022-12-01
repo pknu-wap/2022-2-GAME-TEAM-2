@@ -1337,6 +1337,8 @@ MonoBehaviour:
   fFollowSpeed: 1.5
   isFollow: 1
   _bound: {fileID: 2023139037}
+  shakeRange: 0.05
+  duration: 0.5
 --- !u!114 &1083936107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3940,7 +3942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810885723389869149, guid: 365cdb64033b1cb4ab5eaa3c9b5a6372, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8810885723389869151, guid: 365cdb64033b1cb4ab5eaa3c9b5a6372, type: 3}
       propertyPath: m_RootOrder
@@ -6407,6 +6409,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1944138329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 157429123330222525, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+  m_PrefabInstance: {fileID: 1544186339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2002951885
 GameObject:
   m_ObjectHideFlags: 0
@@ -6569,7 +6576,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021636337, y: 0.27382806}
+  m_Offset: {x: 0.023657173, y: 0.2805275}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6580,7 +6587,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7259403, y: 0.5956591}
+  m_Size: {x: 0.4544801, y: 0.60905796}
   m_EdgeRadius: 0
 --- !u!1 &941625879843058623
 GameObject:
@@ -6764,7 +6771,7 @@ MonoBehaviour:
   - "\uCC45\uC0C1\uC548\uC5D0 \uBB34\uC5B8\uAC00 \uC788\uB2E4."
   - "\uC774\uAC83\uC740.. \uC544\uAE4C \uADF8 \uC77C\uAE30\uC7A5\uC758 \uC5F0\uC7A5\uC778\uAC74\uAC00?"
   - "\uC77C\uAE30\uC7A5\uC758 \uC77C\uBD80\uBD84\uC744 \uD68D\uB4DD\uD588\uB2E4."
-  diaryObj: {fileID: 0}
+  diaryObj: {fileID: 1944138329}
   diaryNum: 1
   bookSound: Diary
   DiarySwitch: 8
