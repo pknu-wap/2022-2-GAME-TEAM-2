@@ -84,10 +84,6 @@ public class SpawnManager : MonoBehaviour
     // 씬 이동마다 호출
     IEnumerator SpawnCoroutine()
     {
-        /*----------------------------------------------------*/
-        if (chase)
-            yield break;
-        /*----------------------------------------------------*/
         if (!chase)
             yield break;
 

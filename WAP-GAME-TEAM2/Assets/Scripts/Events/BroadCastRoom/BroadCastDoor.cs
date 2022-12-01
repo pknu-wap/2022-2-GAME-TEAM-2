@@ -45,7 +45,12 @@ public class BroadCastDoor : Door
         yield return new WaitForSeconds(1.5f);
         PlayerController.instance.transform.position = toMove;
         PlayerController.instance.isSceneChange = true;
-        
+
+        if (SpawnManager.instance.chase == true)
+            SpawnManager.instance.spawnTarget.chase = false;
+        SpawnManager.instance.spawnPoint = toMove;
+        SpawnManager.instance.sceneName = sceneName;
+
         if (!EventManager.instance.switches[(int)SwitchType.StFirstEntry])
         {
             playerLight.SetActive(false);
