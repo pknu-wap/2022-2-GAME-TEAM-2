@@ -46,7 +46,7 @@ public class ChaseEvent1F: DefaultEvent
             SpawnManager.instance.chaserNumber = 1;
             chaser.gameObject.SetActive(true);
 
-            theEvent.switches[(int)SwitchType.PoDoorOpend] = true;
+            theEvent.switches[(int)SwitchType.PoDoorOpened] = true;
             door.DoorOpen();
 
             theEvent.isEventIng = false;

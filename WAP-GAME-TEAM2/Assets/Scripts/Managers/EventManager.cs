@@ -42,9 +42,11 @@ public enum SwitchType
     AudiovisualRoomChaseEvent,  // 시청각실 추격 이벤트
     AudiovisualRoomLightEvent,  // 시청각실 추격 종료 이벤트
     AudiovisualRoomKeyEvent,    // 시청각실 아이템 획득 이벤트
+    TearWall2F,                  // 2층 배전함 칼 이벤트                
+    DoorEvent1F,                // 1층 문 열림 이벤트
     TeacherOfficeFileEvent,     // 교무실 촌지 획득 이벤트
     ChaseEvent1F,           // 1층 추격 이벤트
-    PoDoorOpend,            // 교장실 문 열림
+    PoDoorOpened,            // 교장실 문 열림
     PrincipalOfficeNumberEvent, // 교장실 금고 이벤트
     PrincipalOfficeKeyEvent,    // 교장실 키 이벤트
     DiaryEvent1223,             // 도서관 마지막 일기장

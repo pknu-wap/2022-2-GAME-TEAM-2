@@ -14,7 +14,7 @@ public class PrincipalOfficeDoor : Door
         if (EventManager.instance.switches[(int)SwitchType.TeacherOfficeFileEvent])
         {
             crack.SetActive(true);
-            lockDial += " ¹®¿¡ ±ÝÀÌ °¡ÀÖ´Ù.";
+            lockDial += " ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö´ï¿½.";
         }
 
         if (EventManager.instance.switches[(int)SwitchType.ChaseEvent1F])
@@ -25,7 +25,7 @@ public class PrincipalOfficeDoor : Door
 
     public void DoorOpen()
     {
-        doorOpened = EventManager.instance.switches[(int)SwitchType.PoDoorOpend];
+        doorOpened = EventManager.instance.switches[(int)SwitchType.PoDoorOpened];
 
         foreach (var t in ClosedDoor)
             t.SetActive(false);
