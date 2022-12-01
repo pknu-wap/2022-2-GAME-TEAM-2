@@ -66,6 +66,14 @@ public class SpawnManager : MonoBehaviour
         sceneTileDictionary.Add("TeacherOffice", (new Vector2(-6.5f, -4.5f), new Vector2(12.5f, 6.5f)));
         sceneTileDictionary.Add("PrincipalOffice", (new Vector2(-6.5f, -4.5f), new Vector2(-0.5f, 5.5f)));
 
+        sceneTileDictionary.Add("3Floor", (new Vector2(-13.5f, -6.5f), new Vector2(13.5f, 8.5f)));
+        sceneTileDictionary.Add("ToiletF(3F)", (new Vector2(-5.5f, -4.5f), new Vector2(5.5f, 0.5f)));
+        sceneTileDictionary.Add("ComputerRoom", (new Vector2(-7.5f, -4.5f), new Vector2(10.5f, 6.5f)));
+        sceneTileDictionary.Add("2-1", (new Vector2(-7.5f, -4.5f), new Vector2(10.5f, 6.5f)));
+        sceneTileDictionary.Add("2-2", (new Vector2(-7.5f, -8.5f), new Vector2(4.5f, 1.5f)));
+        sceneTileDictionary.Add("BroadcastRoom", (new Vector2(-4.5f, -0.5f), new Vector2(4.5f, 4.5f)));
+        sceneTileDictionary.Add("BroadcastR2", (new Vector2(-3.5f, 6.5f), new Vector2(4.5f, 11.5f)));
+
     }
 
     public void StartSpawnCoroutine()
@@ -76,6 +84,10 @@ public class SpawnManager : MonoBehaviour
     // 씬 이동마다 호출
     IEnumerator SpawnCoroutine()
     {
+        /*----------------------------------------------------*/
+        if (chase)
+            yield break;
+        /*----------------------------------------------------*/
         if (!chase)
             yield break;
 
