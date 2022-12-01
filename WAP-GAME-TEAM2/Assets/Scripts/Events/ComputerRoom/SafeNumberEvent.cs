@@ -2,93 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SafeNumberEvent : MonoBehaviour
+public class SafeNumberEvent : DefaultEvent
 {
-    private NumberSystem theNumber;
-    private EventManager theEvent;
-    [SerializeField] private ItemEvent theKeyEvent;
 
-    [SerializeField] private int correctNumber;
+    public NumberSystem theNumber;
+    public int correctNumber;
 
-    public SwitchType numberEventSwitch;
-    public SwitchType keyEventSwitch;
-
-    public string dir;
-    public float val;
-
-    private bool isCollision;
-    private bool isInteracting;
-
-    // Start is called before the first frame update
-    void Start()
+    public string[] anotherDials;
+    protected override IEnumerator ExtraEventCo()
     {
-        theEvent = EventManager.instance;
-        if (EventManager.instance.switches[(int)numberEventSwitch])
-        {
-            gameObject.SetActive(false);
-
-            if (!EventManager.instance.switches[(int)keyEventSwitch])
-            {
-                theKeyEvent.gameObject.SetActive(true);
-                theKeyEvent.spriteObj.SetActive(true);
-            }
-        }
-
-        theNumber = FindObjectOfType<NumberSystem>();
-
-        isCollision = false;
-        isInteracting = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            isCollision = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            isCollision = false;
-        }
-    }
-
-    private void Update()
-    {
-        if (isCollision && !isInteracting)
-        {
-            if (Input.GetKeyDown(KeyCode.Z) && PlayerController.instance.GetPlayerDir(dir) == val)
-            {
-                StartCoroutine(NumberCoroutine());
-            }
-        }
-    }
-
-    IEnumerator NumberCoroutine()
-    {
+        yield return new WaitUntil(() => theDial.talking == false);
         PlayerController.instance.IsPause = true;
-        isInteracting = true;
-
-        yield return new WaitForSeconds(0.2f);
+        theEvent.isEventIng = true;
 
         theNumber.ShowNumber(correctNumber);
-        yield return new WaitUntil(() => !theNumber.activeated);
+        yield return new WaitUntil(() => !theNumber.activated);
 
-        
         if (theNumber.GetResult())
         {
-            if (!EventManager.instance.switches[(int)numberEventSwitch])
-                EventManager.instance.switches[(int)numberEventSwitch] = true;
+            theEvent.switches[(int)theSwitch] = true;
+            yield return new WaitForSeconds(0.5f);
 
-            theKeyEvent.gameObject.SetActive(true);
-            theKeyEvent.spriteObj.gameObject.SetActive(true);
+            theAudio.PlaySFX("±Ý°í");
+            yield return new WaitForSeconds(0.5f);
+            theDial.ShowText(anotherDials[0]);
+            yield return new WaitUntil(() => theDial.nextDialogue == true);
+
+            theDial.ShowText(anotherDials[1]);
+            yield return new WaitUntil(() => theDial.nextDialogue == true);
+
+            theAudio.PlaySFX("Detect");
+            theDial.ShowText(anotherDials[2]);
+            InventoryManager.instance.GetItem("2-2¹Ý ¿­¼è");
+
+            yield return new WaitUntil(() => theDial.nextDialogue == true);
             gameObject.SetActive(false);
         }
-
-        PlayerController.instance.IsPause = false;  
-        isInteracting = false;
+        PlayerController.instance.IsPause = false;
+        theEvent.isEventIng = false;
     }
+
+    protected override void SwitchCheck()
+    {
+        if (theEvent.switches[(int)theSwitch])
+            gameObject.SetActive(false);
+    }
+
+
 }
