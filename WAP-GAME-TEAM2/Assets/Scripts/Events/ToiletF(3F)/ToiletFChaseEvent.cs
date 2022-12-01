@@ -10,13 +10,16 @@ public class ToiletFChaseEvent : DefaultEvent
     [SerializeField] private AIController chaser;
 
     public string[] Dials;
-    public string heartBeatSound;
+    public string bloodSound;
     public string surpriseSound;
 
     protected override void SwitchCheck()
     {
         if (EventManager.instance.switches[(int)SwitchType.ToiletFChaseEvent])
         {
+            chaser.gameObject.SetActive(false);
+            itemEvent.gameObject.SetActive(true);
+            itemEvent.spriteObj.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
     }
@@ -30,15 +33,36 @@ public class ToiletFChaseEvent : DefaultEvent
         theEvent.isEventIng = true;
         thePlayer.IsPause = true;
 
-        AudioManager.instance.PlaySFX(surpriseSound);
-        yield return new WaitForSeconds(1f);
+        SpawnManager.instance.StartChase(chaser);
+        SpawnManager.instance.chaserNumber = 2;
+        chaser.SetNodeArray();
 
-        AudioManager.instance.PlaySFX(heartBeatSound);
-        yield return new WaitForSeconds(1.5f);
-        AudioManager.instance.PlaySFX(heartBeatSound);
-        yield return new WaitForSeconds(1.5f);
-        AudioManager.instance.PlaySFX(heartBeatSound);
-        yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlaySFX(surpriseSound);
+        thePlayer.SetBalloonAnim();
+        yield return new WaitForSeconds(2f);
+
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.8f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.6f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.4f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.4f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.2f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.2f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.1f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.1f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.1f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.1f);
+        AudioManager.instance.PlaySFX(bloodSound);
+        yield return new WaitForSeconds(0.1f);
 
         theEvent.isEventIng = false;
         thePlayer.IsPause = false;
@@ -46,6 +70,8 @@ public class ToiletFChaseEvent : DefaultEvent
         yield return new WaitForSeconds(1f);
 
         chaser.chase = true;
+
+        EventManager.instance.switches[(int)SwitchType.ToiletFChaseEvent] = true;
 
         itemEvent.gameObject.SetActive(true);
         itemEvent.spriteObj.gameObject.SetActive(true);
