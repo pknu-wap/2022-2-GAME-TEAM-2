@@ -34,7 +34,7 @@ public class ChoiceManager : MonoBehaviour
     public string keySound;
     void Start()
     {
-        SelectedNum = 0;
+        SelectedNum = -1;
         highlightedNum = 0;
         choiceIng = false;
     }
@@ -46,10 +46,6 @@ public class ChoiceManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             SelectedNum = highlightedNum;
-            ExitChoice();
-        }
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
             ExitChoice();
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))

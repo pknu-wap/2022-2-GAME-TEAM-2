@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Title
-    clip: {fileID: 8300000, guid: a96ed34d55861844797e0fb0390072d1, type: 3}
+    clip: {fileID: 8300000, guid: f520ac0faabeed7488c263e70e6738b6, type: 3}
     volume: 1
     pitch: 1
     loop: 1
@@ -263,6 +263,11 @@ MonoBehaviour:
     loop: 0
   - name: "\uCFF5"
     clip: {fileID: 8300000, guid: 3900767b83a4c754885bfe7a79d71538, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uCC45\uAF42\uB294\uC18C\uB9AC"
+    clip: {fileID: 8300000, guid: 9d2776476885e764dbd0e729585f9a44, type: 3}
     volume: 1
     pitch: 1
     loop: 0

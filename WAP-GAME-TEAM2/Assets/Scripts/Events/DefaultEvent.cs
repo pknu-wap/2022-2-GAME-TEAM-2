@@ -30,11 +30,10 @@ public class DefaultEvent : MonoBehaviour
     
     protected virtual void Update()
     {
+        if (!isCollision || DialogueManager.instance.talking || ChoiceManager.instance.choiceIng 
+            ||theEvent.isEventIng || theEvent.isWorking) return;
         if (!CanPlayerInteract())
             return;
-        
-        if (!isCollision || DialogueManager.instance.talking || ChoiceManager.instance.choiceIng 
-            ||theEvent.isEventIng) return;
         if (isInteracting && !DialogueManager.instance.talking)
         {
             isInteracting = false;

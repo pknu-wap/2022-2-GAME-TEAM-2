@@ -42,6 +42,10 @@ public enum SwitchType
     AudiovisualRoomChaseEvent,  // 시청각실 추격 이벤트
     AudiovisualRoomLightEvent,  // 시청각실 추격 종료 이벤트
     AudiovisualRoomKeyEvent,    // 시청각실 아이템 획득 이벤트
+    DiaryEvent1223,             // 도서관 마지막 일기장
+    FurnishingRItemEvent,       // 비품실 나무 판자 획득
+    BadEnding,                  // 배드 엔딩
+    TrueEnding,                 // 진엔딩
 }
 
 // 게임에서 일어나는 이벤트를 관리해주는 클래스 (이벤트가 한번만 일어나게 하기 위함)
@@ -53,6 +57,11 @@ public class EventManager : MonoBehaviour
     public bool[] diaryObtained;
     public bool isEventIng = false;
     public bool isWorking;
+
+    // 도서관 이벤트 체크를 위한 리스트
+    // 0: 1 - A, 1: 2 - A, 2: 3 - A, 3: 1 - B, 4: 2 - B, 5: 3 - B,
+    // 6: 1 - C, 7: 2 - C, 8 : 3 - C
+    public List<string>[] libraryLists = new List<string>[9]; 
     
     #region Singleton
 
@@ -69,6 +78,14 @@ public class EventManager : MonoBehaviour
         }
     } 
     #endregion
+
+    void Start()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            libraryLists[i] = new List<string>();
+        }
+    }
 
     public void SetEvent(bool _b)
     {

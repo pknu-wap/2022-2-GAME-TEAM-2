@@ -4162,6 +4162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key_sound: Decision
   theMenu: {fileID: 766683710}
+  slots: []
   Description_Text: {fileID: 1513274023}
   tf: {fileID: 1721077035}
 --- !u!114 &1193638532
