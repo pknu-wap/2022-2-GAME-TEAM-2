@@ -45,13 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39386fd033f865a4192c9372195bdafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockSound: DoorClose
+  lockSound: Lock
   moveSound: DoorOpen
   toMove: {x: 3.5, y: 4.5}
   lockDial: "\uC5F4\uB9AC\uC9C0 \uC54A\uB294\uB2E4."
+  openDial: 
+  keyItemName: 
   dir: DirY
   val: -1
   sceneName: BroadcastRoom
+  doorSwitch: 0
   doorOpened: 0
 --- !u!61 &861738163901378563
 BoxCollider2D:

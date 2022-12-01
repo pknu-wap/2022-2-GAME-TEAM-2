@@ -11,8 +11,7 @@ public class AudiovisualRoomChaseEvent : DefaultEvent
     private Light2D playerLight;
 
     [SerializeField] private AIController chaser;
-
-    private AudioManager theAudio;
+    
     public string laughSound;
 
     protected override void SwitchCheck()

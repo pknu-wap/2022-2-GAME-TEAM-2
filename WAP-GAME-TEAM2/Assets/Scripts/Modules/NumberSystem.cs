@@ -24,7 +24,7 @@ public class NumberSystem : MonoBehaviour
 
     [SerializeField] private Animator anim;
 
-    public bool activeated;         // 플레이어가 움직이지 못하도록
+    public bool activated;         // 플레이어가 움직이지 못하도록
     private bool keyInput;          // 키처리 활성화, 비활성화
     private bool correctFlag;       // 정답 여부 판별
 
@@ -37,7 +37,7 @@ public class NumberSystem : MonoBehaviour
     public void ShowNumber(int _correctNumber)
     {
         correctNumber = _correctNumber;
-        activeated = true;
+        activated = true;
         correctFlag = false;
 
         // 비밀번호 자릿수 만큼 패널 활성화
@@ -102,53 +102,53 @@ public class NumberSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (keyInput)
+        if (!keyInput) return;
+        
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                theAudio.PlaySFX(key_sound);
-                SetNumber("DOWN");
-            }
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                theAudio.PlaySFX(key_sound);
-                SetNumber("UP");
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                theAudio.PlaySFX(key_sound);
-
-                if (selectedTextBox < count)
-                    selectedTextBox++;
-                else
-                    selectedTextBox = 0;
-                SetColor();
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                theAudio.PlaySFX(key_sound);
-
-                if (selectedTextBox > 0)
-                    selectedTextBox--;
-                else
-                    selectedTextBox = count;
-                SetColor();
-            }
-            else if (Input.GetKeyDown(KeyCode.Z))
-            {
-                theAudio.PlaySFX(enter_sound);
-
-                keyInput = false;
-                StartCoroutine(OXCoroutine());
-            }
-            else if (Input.GetKeyDown(KeyCode.X))
-            {
-                theAudio.PlaySFX(cancel_sound);
-
-                keyInput = false;
-                StartCoroutine(ExitCoroutine());
-            }
+            theAudio.PlaySFX(key_sound);
+            SetNumber("DOWN");
         }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            theAudio.PlaySFX(key_sound);
+            SetNumber("UP");
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            theAudio.PlaySFX(key_sound);
+
+            if (selectedTextBox < count)
+                selectedTextBox++;
+            else
+                selectedTextBox = 0;
+            SetColor();
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            theAudio.PlaySFX(key_sound);
+
+            if (selectedTextBox > 0)
+                selectedTextBox--;
+            else
+                selectedTextBox = count;
+            SetColor();
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            theAudio.PlaySFX(enter_sound);
+
+            keyInput = false;
+            StartCoroutine(OXCoroutine());
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            theAudio.PlaySFX(cancel_sound);
+
+            keyInput = false;
+            StartCoroutine(ExitCoroutine());
+        }
+        
     }
 
     IEnumerator OXCoroutine()
@@ -166,7 +166,6 @@ public class NumberSystem : MonoBehaviour
         result = int.Parse(tempNumber);
         if (result == correctNumber)
         {
-            theAudio.PlaySFX(correct_sound);
             correctFlag = true;
             
         }
@@ -195,6 +194,6 @@ public class NumberSystem : MonoBehaviour
             superObject.transform.position.y,
             superObject.transform.position.z);
 
-        activeated = false;
+        activated = false;
     }
 }

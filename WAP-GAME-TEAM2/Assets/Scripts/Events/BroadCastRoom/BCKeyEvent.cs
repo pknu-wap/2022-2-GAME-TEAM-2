@@ -32,7 +32,7 @@ public class BCKeyEvent : ItemEvent
         yield return new WaitUntil(() => DialogueManager.instance.nextDialogue == true);
         yield return new WaitForSeconds(1.5f);
         playerLight.intensity = 1f;
-        AudioManager.instance.Stop();
+        AudioManager.instance.StopBGM();
         AudioManager.instance.PlaySFX(surpriseSound);
         chaser.gameObject.transform.position = new Vector2(thePlayer.transform.position.x - 1f
             , thePlayer.transform.position.y);

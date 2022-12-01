@@ -1127,16 +1127,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName
       value: ComputerRoom
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorOpened
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorSwitch
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: keyItemName
@@ -3458,12 +3462,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c0dfaa8ee51624d9faae02dd9cc6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: DirY
-  val: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   Dial:
   - "\uBB38\uC744 \uC5F4 \uC218 \uC788\uAC8C \uD558\uB294 \uBC30\uC804\uD568\uC774\uB2E4."
   - "\uC5F4\uB824\uBA74 \uC5F4\uC1E0\uAC00 \uD544\uC694\uD558\uB2E4."
   isExtraEvent: 1
+  theSwitch: 0
   objSprite: {fileID: 1196489631}
   switchType: 11
   openSound: "\uBC29\uD654\uBB38\uAC1C\uBC29"
@@ -4516,7 +4522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810885723389869149, guid: 365cdb64033b1cb4ab5eaa3c9b5a6372, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810885723389869150, guid: 365cdb64033b1cb4ab5eaa3c9b5a6372, type: 3}
       propertyPath: light
@@ -4916,6 +4922,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: moveSound
       value: "\uC7A5\uC18C\uC774\uB3D9"
       objectReference: {fileID: 0}
@@ -5114,6 +5124,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName
       value: 2-1
       objectReference: {fileID: 0}
@@ -5123,7 +5137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorSwitch
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: keyItemName
@@ -7194,7 +7208,7 @@ GameObject:
   - component: {fileID: 1006634930}
   - component: {fileID: 1006634929}
   - component: {fileID: 1006634928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EntryEvent3F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9542,6 +9556,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: moveSound
       value: "\uC7A5\uC18C\uC774\uB3D9"
       objectReference: {fileID: 0}
@@ -9555,7 +9573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorSwitch
-      value: 1
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: keyItemName
@@ -10242,6 +10260,10 @@ PrefabInstance:
       value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName
       value: ToiletF(3F)
       objectReference: {fileID: 0}
@@ -10507,6 +10529,10 @@ PrefabInstance:
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName
@@ -16047,6 +16073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key_sound: Decision
   theMenu: {fileID: 138574020}
+  slots: []
   Description_Text: {fileID: 1730611373}
   tf: {fileID: 916455860}
 --- !u!114 &2005021316
@@ -16741,7 +16768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   fFollowSpeed: 2
-  b_isFollow: 1
+  isFollow: 0
   _bound: {fileID: 1881295113}
 --- !u!114 &2104349219
 MonoBehaviour:
@@ -19472,16 +19499,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
+      propertyPath: lockSound
+      value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: sceneName
       value: BroadcastRoom
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorOpened
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: doorSwitch
-      value: 3
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 861738163901378560, guid: 94bdc4b4ef2082e4c98295f8718f3077, type: 3}
       propertyPath: keyItemName

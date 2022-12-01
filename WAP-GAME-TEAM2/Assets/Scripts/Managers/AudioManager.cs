@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ии???? ??????? Inspector??? ?????? ??ве?.
+// ?????? ??????? Inspector??? ?????? ?????.
 [System.Serializable]
 public class Sound
 {
@@ -52,6 +52,11 @@ public class Sound
         source.loop = state;
     }
 
+    public bool isFinsh()
+    {
+        return !source.isPlaying;
+    }
+
 }
 
 public class AudioManager : MonoBehaviour
@@ -62,6 +67,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
 
     public int nowPlayBGM;
+    public int chaseBGM;
 
     private void Awake()
     {
@@ -83,7 +89,7 @@ public class AudioManager : MonoBehaviour
             sounds[i].SetSource(soundObject.AddComponent<AudioSource>());
             soundObject.transform.SetParent(this.transform);
         }
-        PlayBGM("3Floor");
+        //PlayBGM("3Floor");
     }
 
     public void PlayBGM(string _name)
@@ -97,6 +103,11 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
+    }
+    public void PlayBGM(int index)
+    {
+        nowPlayBGM = index;
+        sounds[index].Play();
     }
     
     public void PlaySFX(string _name)
@@ -137,11 +148,28 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void Stop()
+    public void Stop(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (_name == sounds[i].name)
+            {
+                sounds[i].Stop();
+                return;
+            }
+        }
+    }
+    public void StopBGM()
     {
         sounds[nowPlayBGM].Stop();
     }
 
+    public void PlayChaseBGM()
+    {
+        sounds[nowPlayBGM].Stop();
+        sounds[chaseBGM].Play();
+    }
+    
     public void SetLoop(string _name, bool state)
     {
         for (int i = 0; i < sounds.Length; i++)
@@ -152,6 +180,19 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public bool IsFinish(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (_name == sounds[i].name)
+            {
+                return sounds[i].isFinsh();
+            }
+        }
+
+        return false;
     }
     
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7799760612806410333}
   - component: {fileID: 7799760612806410334}
   - component: {fileID: 1630985327567742855}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DefaultEvent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7799760612806410332}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0453436, y: -0.5675349, z: 0.035192035}
-  m_LocalScale: {x: 1.3625, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,11 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a628559ef0045a4e921056f55b5626d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: DirY
-  val: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
   Dial:
-  - "\uCEF4\uD4E8\uD130\uB97C \uB2E4 \uC0AC\uC6A9\uD588\uC73C\uBA74 \uC804\uC6D0\uC744
-    \uB044\uACE0 \uAC08 \uAC83.\n"
-  - "\uC804\uC6D0\uC744 \uB044\uACE0 \uAC00\uC9C0 \uC54A\uC740 \uAC83\uC774 \uC801\uBC1C\uB420
-    \uC2DC, \nRP 3\uC810\uC744 \uBD80\uACFC\uD558\uACA0\uC2B5\uB2C8\uB2E4.\n\n"
+  - "\uB4A4\uC838\uBD10\uB3C4 \uB531\uD788 \uBCFC \uAC83\uC740 \uC5C6\uB294 \uAC83
+    \uAC19\uB2E4."
   isExtraEvent: 0
+  theSwitch: 0

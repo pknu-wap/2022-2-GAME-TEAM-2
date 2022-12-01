@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Title
-    clip: {fileID: 8300000, guid: a96ed34d55861844797e0fb0390072d1, type: 3}
+    clip: {fileID: 8300000, guid: f520ac0faabeed7488c263e70e6738b6, type: 3}
     volume: 1
     pitch: 1
     loop: 1
@@ -66,6 +66,11 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Fire
+    clip: {fileID: 8300000, guid: 79489dd15a6941f4da7159ab0139c9e1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   - name: 4Floor
     clip: {fileID: 8300000, guid: 23d84b162e2c6544697fd4f4a8df8155, type: 3}
     volume: 1
@@ -78,6 +83,11 @@ MonoBehaviour:
     loop: 1
   - name: Footstep1
     clip: {fileID: 8300000, guid: 73be59b4e86e87b4b8d59f017fc92eba, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Wrong
+    clip: {fileID: 8300000, guid: 3c765ac768a5f114690d75d2c62ede42, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -156,12 +166,113 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-  - name: "\uCDA9\uB3CC"
-    clip: {fileID: 8300000, guid: 6ac56616142f10549a348e774c924cc9, type: 3}
+  - name: "\uD53C\uBD84\uCD9C"
+    clip: {fileID: 8300000, guid: 22807fa23402fcd45b282846e89ef253, type: 3}
+    volume: 0.85
+    pitch: 1
+    loop: 0
+  - name: "\uB3C4"
+    clip: {fileID: 8300000, guid: 9fb785b7cf68fe846a182e43158994d3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB808"
+    clip: {fileID: 8300000, guid: b737bbc0dfb7bd84b9efde354ce0ec2e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uBBF8"
+    clip: {fileID: 8300000, guid: 6188565cb6dfc2840baaae13e3508c06, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uD30C"
+    clip: {fileID: 8300000, guid: 64892f5b98c8c294093d2b43e0bc7173, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC194"
+    clip: {fileID: 8300000, guid: 35f0c4d03d6f1664b8058088a3fb5cf6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB77C"
+    clip: {fileID: 8300000, guid: 8d87dd4dc139a834d8caa4cc7c799571, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC2DC"
+    clip: {fileID: 8300000, guid: 12db2aa3b5f013240a500a127c411c8e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB3C4\uC624"
+    clip: {fileID: 8300000, guid: 2814b2661762fc243bfc376e54366fef, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB3C4\uC0F5"
+    clip: {fileID: 8300000, guid: 5abefa2d8fd8b9245931508e6ae74d9e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB808\uC0F5"
+    clip: {fileID: 8300000, guid: 2136c946bbcdb7c4d8fb9656043ab8d8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uD30C\uC0F5"
+    clip: {fileID: 8300000, guid: c206d9d5e63bb004c8eb0f7f9920361e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC194\uC0F5"
+    clip: {fileID: 8300000, guid: 1b392dcf76ba01d4d99ca95f7c1b0c6b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uB77C\uC0F5"
+    clip: {fileID: 8300000, guid: 29194a2bd75204e439b6d0b79295b1ed, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Scary
+    clip: {fileID: 8300000, guid: b83cdc83434dd1e48b88254925423d44, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+  - name: "\uADC0\uC2E0\uC6C3\uC74C"
+    clip: {fileID: 8300000, guid: 9902e4eea6befe34390f4ad6ae27c353, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+  - name: "\uAE08\uACE0"
+    clip: {fileID: 8300000, guid: 3a289124545228e41933b549552077d5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Push
+    clip: {fileID: 8300000, guid: 7f22688a3ee3c0f42a6f0dbd7b3b2a7e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Diary
+    clip: {fileID: 8300000, guid: 68515ef013ddbe146a41d3aec263e47c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uCFF5"
+    clip: {fileID: 8300000, guid: 3900767b83a4c754885bfe7a79d71538, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uCC45\uAF42\uB294\uC18C\uB9AC"
+    clip: {fileID: 8300000, guid: 9d2776476885e764dbd0e729585f9a44, type: 3}
     volume: 1
     pitch: 1
     loop: 0
   nowPlayBGM: 0
+  chaseBGM: 0
 --- !u!81 &8282243632900502260
 AudioListener:
   m_ObjectHideFlags: 0

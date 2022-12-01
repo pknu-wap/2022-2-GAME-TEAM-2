@@ -124,7 +124,7 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,6 +132,27 @@ TextureImporter:
       bones: []
       spriteID: e7a44fcc188cbb54b8b15ca4cb558af7
       internalID: 1861124428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: School_B(1)_1
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 48
+        width: 48
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f76d8c3adfee564e8346eaf6cb5b92e
+      internalID: -2130890796
       vertices: []
       indices: 
       edges: []
@@ -148,6 +169,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       School_B(1)_0: 2075844103
+      School_B(1)_1: -2130890796
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

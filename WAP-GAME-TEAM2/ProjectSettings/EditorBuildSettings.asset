@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/3-1.unity
     guid: d448200c0d65eac4895d653ae270940d
   - enabled: 1
+    path: Assets/Scenes/3-2.unity
+    guid: 23244f9d829aa964c961659960256f6c
+  - enabled: 1
+    path: Assets/Scenes/ScienceRoom.unity
+    guid: 2f89d5ef0eee2bc4abdcc17e80e82fbd
+  - enabled: 1
+    path: Assets/Scenes/ArtRoom.unity
+    guid: 5ac03b807c18b6a4f8ddb178d4b07231
+  - enabled: 1
     path: Assets/Scenes/BroadcastR2.unity
     guid: 74e612fd9081aa049b766f9c4f9583dd
   - enabled: 1

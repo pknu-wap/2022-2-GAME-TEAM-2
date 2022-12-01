@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+    public static Menu instance;
+    
     private Animator _anim;
     private AudioManager theAudio;
     private PlayerController thePlayer;
+    private EventManager theEvent;
     public string appear_sound;
     public string key_sound;
 
@@ -15,23 +20,28 @@ public class Menu : MonoBehaviour
     public GameObject[] panels; // 활성화 시킬 패널 
 
     public GameObject[] menus_Tab; // 활성화시킬 인벤토리, 통화, 메시지 탭 오브젝트
-    
+
     private int selectedTab; // 선택된 탭
         
-    private bool menuActivated; // 메뉴 활성화 여부
-    private bool otherActivated; // 인벤토리, 통화, 메시지 탭 활성화 여부
-    public bool OtherActivated { set => otherActivated = value; }
+    public bool menuActivated { get; set; } // 메뉴 활성화 여부
+    public bool otherActivated { get; set; } // 인벤토리, 통화, 메시지 탭 활성화 여부
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
         _anim = GetComponent<Animator>();
         theAudio = AudioManager.instance;
         thePlayer = PlayerController.instance;
+        theEvent = EventManager.instance;
     }
 
     private void Update()
     {
-        if (otherActivated) return;
+        if (otherActivated || theEvent.isEventIng || DialogueManager.instance.talking || ChoiceManager.instance.choiceIng) return;
         if (Input.GetKeyDown(KeyCode.X))
         {
             menuActivated = !menuActivated;
@@ -41,6 +51,7 @@ public class Menu : MonoBehaviour
                 theAudio.PlaySFX(appear_sound);
                 bg_Panel.SetActive(true);
                 thePlayer.IsPause = true;
+                theEvent.isWorking = true;
                 _anim.SetBool("Appear", true);
                 selectedTab = 0;
                 panels[selectedTab].SetActive(true);
@@ -51,6 +62,7 @@ public class Menu : MonoBehaviour
                 theAudio.PlaySFX(appear_sound);
                 bg_Panel.SetActive(false);
                 thePlayer.IsPause = false;
+                theEvent.isWorking = false;
                 _anim.SetBool("Appear", false);
                 panels[selectedTab].SetActive(false);
             }
@@ -85,8 +97,16 @@ public class Menu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             theAudio.PlaySFX(key_sound);
-            otherActivated = true;
-            menus_Tab[selectedTab].SetActive(true);
+            if (selectedTab < 3)
+            {
+                otherActivated = true;
+                menus_Tab[selectedTab].SetActive(true);
+            }
+            else
+            {
+                PlayerController.instance.transform.position = new Vector2(-10f, 1.5f);
+                SceneManager.LoadScene("Title");
+            }
         }
     }
 }

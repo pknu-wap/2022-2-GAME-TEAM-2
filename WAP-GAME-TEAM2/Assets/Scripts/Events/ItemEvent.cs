@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class ItemEvent : MonoBehaviour
+public class ItemEvent : MonoBehaviour
 {  
     protected EventManager theEvent; 
     protected bool isInteraction;
@@ -15,45 +16,45 @@ public abstract class ItemEvent : MonoBehaviour
 
     public string itemName;
     public string getSound = "Detect";
-    public string getDial;
+    public string[] getDial;
     
     public SwitchType ItemSwitch;
-    protected abstract IEnumerator ItemEventCo();
+
+    protected virtual IEnumerator ItemEventCo() { yield break;}
+
 
     protected void Start()
     {
         theEvent = EventManager.instance;
         SwitchCheck();
     }
-    protected void Update()
+    protected virtual void Update()
     {
+        if (!CanPlayerInteract())
+            return;
         if (DialogueManager.instance.talking || theEvent.isEventIng) return;
         if (isInteraction && !DialogueManager.instance.talking)
         {
             isInteraction = false;
             return;
         }
-
-        if (!CanPlayerInteract())
-            return;
-
         if (!Input.GetKeyDown(KeyCode.Z)) return;
-
+        
         AudioManager.instance.PlaySFX(getSound); 
         DialogueManager.instance.ShowText(getDial);
         InventoryManager.instance.GetItem(itemName);
 
         SetSwitch();
-
+        isInteraction = true;
         if (isExtraEvent)
         {
-            isInteraction = true;
             theEvent.isEventIng = true;
             PlayerController.instance.IsPause = true;
             StartCoroutine(ItemEventCo());
         }
 
-        spriteObj.gameObject.SetActive(false);
+        if (spriteObj != null)
+            spriteObj.gameObject.SetActive(false);
     }
 
     protected virtual void SetSwitch()
@@ -89,5 +90,4 @@ public abstract class ItemEvent : MonoBehaviour
         
         return false;
     }
-   
 }

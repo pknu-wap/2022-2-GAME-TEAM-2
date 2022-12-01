@@ -55,6 +55,7 @@ public class DialogueManager : MonoBehaviour
             listSentences.Add(_sentences[i]);
         }
 
+        if (listSentences.Count == 0) return;
         StartCoroutine(StartTextCoroutine());
     }
     
@@ -66,8 +67,6 @@ public class DialogueManager : MonoBehaviour
         listSentences.Add(_sentences);
         StartCoroutine(StartTextCoroutine());
     }
-    
-    
 
     IEnumerator StartTextCoroutine()
     {
@@ -93,7 +92,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (!talking || !keyActivated) return;
+        if (!talking || !keyActivated || ChoiceManager.instance.choiceIng) return;
 
         if (Input.GetKeyDown(KeyCode.Z))
         {

@@ -21,7 +21,7 @@ public class PlayerController : MovingObject
     private AudioManager theAudio;
     [SerializeField] private string stepSound;
     
-#region Singleton
+    #region Singleton
     private void Awake()
     {
         if (instance == null)
@@ -117,9 +117,5 @@ public class PlayerController : MovingObject
         float f_vector = animator.GetFloat(_dir);
         return f_vector;
     }
-
-    public Vector2 GetVector()
-    {
-        return vector;
-    }
+    
 }

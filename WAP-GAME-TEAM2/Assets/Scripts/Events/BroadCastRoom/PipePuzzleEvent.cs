@@ -6,7 +6,6 @@ using UnityEngine;
 public class PipePuzzleEvent : DefaultEvent
 {
     public GameObject pipePuzzle;
-    private DialogueManager theDial;
 
     protected override void SwitchCheck()
     {

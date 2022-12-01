@@ -32,7 +32,7 @@ public class StartEvent : MonoBehaviour
         {
             theEvent.isEventIng = true;
             theEvent.switches[(int)SwitchType.StartEvent] = true;
-            thePlayer.transform.position = new Vector3(0.5f, -1.5f, transform.position.z);
+            thePlayer.transform.position = new Vector3(0.5f, -2.5f, transform.position.z);
             StartCoroutine(StartEventCoroutine());
         }
     }
