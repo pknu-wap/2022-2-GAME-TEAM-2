@@ -51,6 +51,11 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 1
+  - name: "\uCD94\uACA9"
+    clip: {fileID: 8300000, guid: 57a6a7adcb524b34b8ab9da1c09cfadf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
   - name: Cursor
     clip: {fileID: 8300000, guid: a278d33744a099b4693d01b38c2004e6, type: 3}
     volume: 1
