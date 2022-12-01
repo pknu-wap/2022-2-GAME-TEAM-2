@@ -57,8 +57,9 @@ public class InventoryManager : MonoBehaviour
         itemDictionary.Add("2-2반 열쇠", new Item("2-2반 열쇠", "2-2반의 열쇠"));
         ItemDictionary.Add("도서관 열쇠", new Item("도서관 열쇠", "도서관의 열쇠이다."));
         itemDictionary.Add("컴퓨터실 열쇠", new Item("컴퓨터실 열쇠", "컴퓨터실 열쇠"));
-        itemDictionary.Add("음악실 열쇠", new Item("음악실 열쇠", "음악실 열쇠."));
-        itemDictionary.Add("출입문 열쇠", new Item("출입문 열쇠", "출입문 열쇠이다."));
+        itemDictionary.Add("음악실 열쇠", new Item("음악실 열쇠", "음악실 열쇠이다."));
+        itemDictionary.Add("시청각실 열쇠", new Item("시청각실 열쇠", "시청각실 열쇠이다."));
+        itemDictionary.Add("출입문 열쇠", new Item("출입문 열쇠", "밖에 나갈 수 있다!."));
         itemDictionary.Add("나무 판자", new Item("나무 판자", "끊어진 곳에 덧대어서 지나갈수 있게 할\n수 있을 것 같다."));
         ItemDictionary.Add("칼", new Item("칼", "날카롭게 날이 선 칼이다."));
         ItemDictionary.Add("난장이가 쏘아올린 작은 공", new Item("난장이가 쏘아올린 작은 공", "군부 독재시절 소시민들의 암울함을\n그려낸 소설(1-A)"));

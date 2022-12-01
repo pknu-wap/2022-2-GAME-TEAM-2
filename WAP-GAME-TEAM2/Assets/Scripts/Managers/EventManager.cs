@@ -43,6 +43,8 @@ public enum SwitchType
     KeyEvent12,             // 1 - 1 키 이벤트
     DiaryEvent12,           // 1 - 1 일기장 획득
     GhostEvent12,           // 2층 유령 이벤트
+    KeyEvent11,             // 1 - 1 키 이벤트
+    DiaryEvent11,           // 1 - 1 일기장 획득
     AudiovisualRoomChaseEvent,  // 시청각실 추격 이벤트
     AudiovisualRoomLightEvent,  // 시청각실 추격 종료 이벤트
     AudiovisualRoomKeyEvent,    // 시청각실 아이템 획득 이벤트
