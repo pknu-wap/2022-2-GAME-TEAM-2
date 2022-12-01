@@ -45,6 +45,7 @@ public class Title : MonoBehaviour
         newGameAnim.SetTrigger("Start");
         theAudio.PlaySFX("Cursor");
         theFade.FadeOut(0.05f);
+        theAudio.StopBGM();
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("3-1");
     }

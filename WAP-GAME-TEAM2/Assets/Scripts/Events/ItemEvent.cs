@@ -7,6 +7,7 @@ public class ItemEvent : MonoBehaviour
 {  
     protected EventManager theEvent; 
     protected bool isInteraction;
+    protected bool isCollision;
 
     public GameObject spriteObj;
     
@@ -30,14 +31,15 @@ public class ItemEvent : MonoBehaviour
     }
     protected virtual void Update()
     {
-        if (!CanPlayerInteract())
-            return;
-        if (DialogueManager.instance.talking || theEvent.isEventIng) return;
+        if (!isCollision || DialogueManager.instance.talking || theEvent.isEventIng
+            || theEvent.isWorking || ChoiceManager.instance.choiceIng) return;
         if (isInteraction && !DialogueManager.instance.talking)
         {
             isInteraction = false;
             return;
         }
+        if (!CanPlayerInteract())
+            return;
         if (!Input.GetKeyDown(KeyCode.Z)) return;
         
         AudioManager.instance.PlaySFX(getSound); 
@@ -90,4 +92,14 @@ public class ItemEvent : MonoBehaviour
         
         return false;
     }
+
+    protected void OnTriggerEnter2D(Collider2D col)
+    {
+        isCollision = true;
+    }
+    protected void OnTriggerExit2D(Collider2D other)
+    {
+        isCollision = false;
+    }
+
 }
