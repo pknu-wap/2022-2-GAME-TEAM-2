@@ -13,6 +13,11 @@ public class Title : MonoBehaviour
     {
         theFade = FadeManager.instance;
         theAudio = AudioManager.instance;
+
+        PlayerController.instance.transform.position = new Vector2(-10f, 1.5f);
+        PlayerController.instance.flashLight.intensity = 0.5f;
+        PlayerController.instance.IsPause = false;
+        Menu.instance.otherActivated = false;
     }
 
     public void NewGame()

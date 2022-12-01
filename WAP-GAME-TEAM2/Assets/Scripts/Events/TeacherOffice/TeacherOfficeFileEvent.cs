@@ -41,10 +41,12 @@ public class TeacherOfficeFileEvent : DefaultEvent
 
         DialogueManager.instance.ShowText(Dial);
 
-        theEvent.isEventIng = false;
-        thePlayer.IsPause = false;
+        yield return new WaitUntil(() => DialogueManager.instance.nextDialogue == true);
 
         EventManager.instance.switches[(int)SwitchType.TeacherOfficeFileEvent] = true;
+
+        theEvent.isEventIng = false;
+        thePlayer.IsPause = false;
 
         gameObject.SetActive(false);
 

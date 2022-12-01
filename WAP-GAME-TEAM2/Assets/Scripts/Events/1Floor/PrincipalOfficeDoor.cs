@@ -14,7 +14,7 @@ public class PrincipalOfficeDoor : Door
         if (EventManager.instance.switches[(int)SwitchType.TeacherOfficeFileEvent])
         {
             crack.SetActive(true);
-            lockDial += " ���� ���� ���ִ�.";
+            lockDial += " 문에 금이 가있다.";
         }
 
         if (EventManager.instance.switches[(int)SwitchType.ChaseEvent1F])

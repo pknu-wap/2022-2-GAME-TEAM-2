@@ -74,6 +74,9 @@ public class SpawnManager : MonoBehaviour
         sceneTileDictionary.Add("BroadcastRoom", (new Vector2(-4.5f, -0.5f), new Vector2(4.5f, 4.5f)));
         sceneTileDictionary.Add("BroadcastR2", (new Vector2(-3.5f, 6.5f), new Vector2(4.5f, 11.5f)));
 
+        sceneTileDictionary.Add("Library", (new Vector2(-7.5f, 11.5f), new Vector2(6.5f, 6.5f)));
+        sceneTileDictionary.Add("FurnishingRoom", (new Vector2(-4.5f, -3.5f), new Vector2(5.5f, 1.5f)));
+
     }
 
     public void StartSpawnCoroutine()

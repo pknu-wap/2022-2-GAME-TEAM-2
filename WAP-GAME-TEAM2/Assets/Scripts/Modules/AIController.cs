@@ -183,6 +183,11 @@ public class AIController : MovingObject
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameOver.instance.Gameover();
+    }
+
     void OnDrawGizmos()
     {
         //Gizmos.color = Color.green;
