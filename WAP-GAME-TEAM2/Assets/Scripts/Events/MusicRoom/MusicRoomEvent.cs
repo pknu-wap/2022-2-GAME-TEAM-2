@@ -7,6 +7,7 @@ using URPGlitch.Runtime.AnalogGlitch;
 
 public class MusicRoomEvent : DefaultEvent
 {
+    public GameObject key;
     public GameObject myPiano;
     public GameObject[] peoples;
     public MyGlitch myGlitch;
@@ -69,5 +70,6 @@ public class MusicRoomEvent : DefaultEvent
         EventManager.instance.isEventIng = false;
         PlayerController.instance.IsPause = false;
         theEvent.isWorking = false;
+        key.SetActive(true);
     }
 }

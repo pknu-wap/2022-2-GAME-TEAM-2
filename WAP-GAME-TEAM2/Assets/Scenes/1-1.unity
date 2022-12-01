@@ -2304,6 +2304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key_sound: Decision
   theMenu: {fileID: 834830279}
+  slots: []
   Description_Text: {fileID: 470246403}
   tf: {fileID: 1934177490}
 --- !u!114 &659199450
@@ -4266,6 +4267,8 @@ MonoBehaviour:
   fFollowSpeed: 2
   isFollow: 1
   _bound: {fileID: 801843911}
+  shakeRange: 0.05
+  duration: 0.5
 --- !u!114 &1100041191
 MonoBehaviour:
   m_ObjectHideFlags: 0

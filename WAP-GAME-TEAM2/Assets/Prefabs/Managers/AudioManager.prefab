@@ -271,6 +271,36 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: "\uCE7C\uC18C\uB9AC"
+    clip: {fileID: 8300000, guid: 8f2eb5c2c1aca284a9d9e123bde35b41, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uBC15\uC218\uAC08\uCC44"
+    clip: {fileID: 8300000, guid: 725a341de04d21e419cd4d116b581647, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uD3F4\uD130\uAC00\uC774\uC2A4\uD2B8"
+    clip: {fileID: 8300000, guid: 027f84d7165776840b876b349e311e6b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uAE00\uB9AC\uCE58(\uD654\uBA74\uBCF5\uADC0)"
+    clip: {fileID: 8300000, guid: 2fb40f813692abb4aa5c93716bf979f2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uAE00\uB9AC\uCE581"
+    clip: {fileID: 8300000, guid: cb007d0cd6317244dacd88972df9e8cb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uAE00\uB9AC\uCE582"
+    clip: {fileID: 8300000, guid: b326bce2c3b8d814fbd3a331dcfbad2d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   nowPlayBGM: 0
   chaseBGM: 0
 --- !u!81 &8282243632900502260

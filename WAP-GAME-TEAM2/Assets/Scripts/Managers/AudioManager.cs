@@ -89,7 +89,7 @@ public class AudioManager : MonoBehaviour
             sounds[i].SetSource(soundObject.AddComponent<AudioSource>());
             soundObject.transform.SetParent(this.transform);
         }
-        PlayBGM("Title");
+        //PlayBGM("Title");
     }
 
     public void PlayBGM(string _name)

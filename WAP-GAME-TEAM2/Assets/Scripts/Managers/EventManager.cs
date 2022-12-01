@@ -34,11 +34,15 @@ public enum SwitchType
     ToiletFKeyEvent,        // 3층 여자화장실 키 획득 이벤트
     SafeNumberEvent,        // 3층 컴퓨터실 금고 이벤트
     ComputerRoomKeyEvent,   // 3층 컴퓨터실 금고 키 획득 이벤트
-    Opened2F,               // 2층 문 열림 이벤트
+    Opened2F,               // 2층 문 열림 이벤트  
+    Opened11,               // 1 - 1 문 열림 
+    OpenedMR,               // 음악실 문 열림
+    OpenedAV,               // 시청각실 문 열림
     MusicRoomEvent,         // 2층 음악실 이벤트
-    KeyEvent11,             // 1 - 1 키 이벤트
-    DiaryEvent11,           // 1 - 1 일기장 획득
-    GhostEvent11,           // 2층 유령 이벤트
+    MusicRoomKeyEvent,      // 2층 음악실 키 획득
+    KeyEvent12,             // 1 - 1 키 이벤트
+    DiaryEvent12,           // 1 - 1 일기장 획득
+    GhostEvent12,           // 2층 유령 이벤트
     AudiovisualRoomChaseEvent,  // 시청각실 추격 이벤트
     AudiovisualRoomLightEvent,  // 시청각실 추격 종료 이벤트
     AudiovisualRoomKeyEvent,    // 시청각실 아이템 획득 이벤트

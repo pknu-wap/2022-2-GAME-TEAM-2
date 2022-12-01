@@ -43,18 +43,20 @@ public class ObtainDiary : MonoBehaviour
 
     protected virtual IEnumerator ObtainDiaryCo()
     {
-        if (!CanPlayerInteract())
-        {
-            isCoroutine = false;
-            yield break;
-        }
-
+        
         if (DialogueManager.instance.talking || theEvent.switches[(int)DiarySwitch]
                                              || theEvent.isEventIng)
         {
             isCoroutine = false;
             yield break;
         }
+        
+        if (!CanPlayerInteract())
+        {
+            isCoroutine = false;
+            yield break;
+        }
+
 
         if (!Input.GetKeyDown(KeyCode.Z))
         {

@@ -10,18 +10,18 @@ public class GhostEvent11 : MonoBehaviour
     public string laughingSound;
     void Start()
     {
-        if (EventManager.instance.switches[(int)SwitchType.GhostEvent11])
+        if (EventManager.instance.switches[(int)SwitchType.GhostEvent12])
         {
             gameObject.SetActive(false);
         }
 
-        EventManager.instance.switches[(int)SwitchType.KeyEvent11] = true;
+        EventManager.instance.switches[(int)SwitchType.KeyEvent12] = true;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (EventManager.instance.switches[(int)SwitchType.GhostEvent11]) return;
-        EventManager.instance.switches[(int)SwitchType.GhostEvent11] = true;
+        if (EventManager.instance.switches[(int)SwitchType.GhostEvent12]) return;
+        EventManager.instance.switches[(int)SwitchType.GhostEvent12] = true;
         StartCoroutine(GhostEventCo());
     }
 

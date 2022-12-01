@@ -39,7 +39,8 @@ public class InventoryManager : MonoBehaviour
         // GetItem("이육사 시집");
         // GetItem("낙원구 행복동");
         // GetItem("초식");
-        GetItem("나무 판자");
+        //GetItem("나무 판자");
+        GetItem("칼");
     }
 
     private void itemDictionaryInit()
@@ -52,6 +53,7 @@ public class InventoryManager : MonoBehaviour
         itemDictionary.Add("방송실 열쇠", new Item("방송실 열쇠", "방송실의 열쇠이다."));
         itemDictionary.Add("배전함 열쇠(3F)", new Item("배전함 열쇠(3F)", "3층 배전함의 열쇠이다."));
         itemDictionary.Add("2-1반 열쇠", new Item("2-1반 열쇠", "2-1반의 열쇠"));
+        itemDictionary.Add("1-1반 열쇠", new Item("1-1반 열쇠", "1-1반의 열쇠"));
         itemDictionary.Add("2-2반 열쇠", new Item("2-2반 열쇠", "2-2반의 열쇠"));
         ItemDictionary.Add("도서관 열쇠", new Item("도서관 열쇠", "도서관의 열쇠이다."));
         itemDictionary.Add("컴퓨터실 열쇠", new Item("컴퓨터실 열쇠", "컴퓨터실 열쇠"));
