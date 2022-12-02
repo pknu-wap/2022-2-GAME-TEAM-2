@@ -3915,7 +3915,7 @@ PrefabInstance:
     - target: {fileID: 8850258049532723030, guid: 1da209e506b182545be5c2a3f3613b9e, type: 3}
       propertyPath: paperObj
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1147979053}
     - target: {fileID: 8850258049532723031, guid: 1da209e506b182545be5c2a3f3613b9e, type: 3}
       propertyPath: m_Size.x
       value: 0.6970147
