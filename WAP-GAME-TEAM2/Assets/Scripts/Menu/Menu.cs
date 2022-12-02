@@ -106,6 +106,7 @@ public class Menu : MonoBehaviour
             else
             {
                 PlayerController.instance.transform.position = new Vector2(-10f, 1.5f);
+                theEvent.isWorking = false;
                 theAudio.StopBGM();
                 theAudio.PlayBGM("Title");
                 SceneManager.LoadScene("Title");

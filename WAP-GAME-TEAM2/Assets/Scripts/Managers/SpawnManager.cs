@@ -98,7 +98,7 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnCoroutine());
     }
 
-    // ¾À ÀÌµ¿¸¶´Ù È£Ãâ
+    // ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½
     IEnumerator SpawnCoroutine()
     {
 
@@ -110,6 +110,7 @@ public class SpawnManager : MonoBehaviour
             int rand = Random.Range(0, 2);
             if (rand == 0)
             {
+                interTime = 0f;
                 chase = false;
                 AudioManager.instance.StopChaseBGM();
                 AudioManager.instance.PlayBGM();
