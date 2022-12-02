@@ -1465,7 +1465,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   Dial:
-  - "1-1\uBC18 \uAE40\uCCA0\uC218 80\uB9CC\uC6D0"
+  - "1-1\uBC18 \uAD6D\uC9C4\uD0DC 80\uB9CC\uC6D0"
   isExtraEvent: 1
   theSwitch: 0
   ToFileEvent: {fileID: 2082582537}
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d273f2166afa64d8402c03124a6724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameoverText: {fileID: 0}
+  gameoverAnim: {fileID: 0}
 --- !u!114 &517987054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,6 +1793,34 @@ PrefabInstance:
     - target: {fileID: 1358423828410728988, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780861756032930841, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089116766970580096, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182802445887804428, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682983275178753123, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084828929134766882, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506352805112712828, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516829573934770136, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0881236e766bb54fb3034b24f6d4592, type: 3}
@@ -3764,7 +3792,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   Dial:
-  - "2-2\uBC18 \uAE40\uCCA0\uC218 58\uB9CC\uC6D0"
+  - "2-2\uBC18 \uC870\uACBD\uD0DC 58\uB9CC\uC6D0"
   isExtraEvent: 1
   theSwitch: 0
   ToFileEvent: {fileID: 2082582537}
@@ -5624,7 +5652,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   Dial:
-  - "2-1\uBC18 \uAE40\uCCA0\uC218 25\uB9CC\uC6D0"
+  - "2-1\uBC18 \uCD5C\uC900\uD611 25\uB9CC\uC6D0"
   isExtraEvent: 1
   theSwitch: 0
   ToFileEvent: {fileID: 2082582537}
@@ -6515,7 +6543,7 @@ MonoBehaviour:
   Dial:
   - "\uC5B4\uB514\uC120\uAC00 \uBD80\uC11C\uC9C0\uB294 \uC18C\uB9AC\uAC00 \uB0AC\uB2E4."
   isExtraEvent: 0
-  theSwitch: 39
+  theSwitch: 45
   crashSound: "\uCDA9\uB3CC"
 --- !u!1 &2104349217
 GameObject:

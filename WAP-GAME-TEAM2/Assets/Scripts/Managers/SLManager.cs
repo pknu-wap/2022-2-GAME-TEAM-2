@@ -16,9 +16,10 @@ public class SLManager : MonoBehaviour
         public List<string> inventoryItemList; // 가지고 있는 아이템의 이름 저장.
         public bool[] event_Switches;
         public bool[] diaryObtained;
+        public List<string>[] libraryLists;
 
         public PlayerData(Vector2 _playerPos, int _nowPlayingBGM, string _curSceneName, List<string> _inventoryItemList,
-            bool[] _eventSwitches,  bool[] _diaryObtained)
+            bool[] _eventSwitches,  bool[] _diaryObtained, List<string>[] _libraryLists)
         {
             player_Pos = _playerPos;
             now_PlayingBGM = _nowPlayingBGM;
@@ -26,6 +27,7 @@ public class SLManager : MonoBehaviour
             inventoryItemList = _inventoryItemList;
             event_Switches = _eventSwitches;
             diaryObtained = _diaryObtained;
+            libraryLists = _libraryLists;
         }
     }
     
@@ -63,7 +65,9 @@ public class SLManager : MonoBehaviour
         string curSceneName = SceneManager.GetActiveScene().name;
         bool[] eventSwitches = EventManager.instance.switches;
         bool[] diaryObtained = EventManager.instance.diaryObtained;
-        
+        List<string>[] libraryLists = EventManager.instance.libraryLists;
+
+
         List<Item> inventoryItemList = InventoryManager.instance.InventoryItemList;
         List<string> invenItemList = new List<string>();
         
@@ -73,7 +77,8 @@ public class SLManager : MonoBehaviour
             invenItemList.Add(inventoryItemList[i].itemName);
         }
         
-        PlayerData data = new PlayerData(playerPos, nowPlayingBGM, curSceneName, invenItemList, eventSwitches, diaryObtained);
+        PlayerData data = new PlayerData(playerPos, nowPlayingBGM, curSceneName, invenItemList, eventSwitches, diaryObtained
+            , libraryLists);
         string jdata = JsonConvert.SerializeObject(data, settings);
         File.WriteAllText(Application.dataPath + "/Save.json", jdata);
     }
@@ -105,6 +110,14 @@ public class SLManager : MonoBehaviour
         {
             EventManager.instance.diaryObtained[i] = data.diaryObtained[i]; 
         }
-        
+
+        for (int i = 0; i < data.libraryLists.Length; i++)
+        {
+            for (int j = 0; j < data.libraryLists[i].Count; j++)
+            {
+                EventManager.instance.libraryLists[i].Add(data.libraryLists[i][j]);
+            }
+        }
+
     }
 }

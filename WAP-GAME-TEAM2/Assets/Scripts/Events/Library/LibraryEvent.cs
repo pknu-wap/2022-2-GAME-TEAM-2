@@ -34,8 +34,8 @@ public class LibraryEvent : MonoBehaviour
 
     private IEnumerator LibraryEventCo()
     {
-        yield return new WaitForSeconds(1f);
         theEvent.SetEvent(true);
+        yield return new WaitForSeconds(1f);
         theAudio.PlaySFX(triggerSound);
         yield return new WaitForSeconds(1.5f);
         DialogueManager.instance.ShowText(clearDial);

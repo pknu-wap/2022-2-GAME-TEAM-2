@@ -30,6 +30,7 @@ public class EntryEvent3F : MonoBehaviour
         yield return new WaitForSeconds(2f);
         DialogueManager.instance.ShowText(dial);
 
+        yield return new WaitUntil(() => DialogueManager.instance.nextDialogue);
         EventManager.instance.switches[(int)switchType] = true;
         EventManager.instance.isEventIng = false;
         thePlayer.IsPause = false;

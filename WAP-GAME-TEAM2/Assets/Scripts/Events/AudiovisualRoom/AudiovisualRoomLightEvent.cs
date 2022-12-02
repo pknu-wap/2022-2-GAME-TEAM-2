@@ -49,6 +49,11 @@ public class AudiovisualRoomLightEvent : DefaultEvent
 
         theAudio.PlaySFX(scream);
 
+        SpawnManager.instance.chase = false;
+
+        AudioManager.instance.StopBGM();
+        AudioManager.instance.PlayBGM("2Floor");
+
         itemEvent.gameObject.SetActive(true);
         itemEvent.transform.position = chaser.transform.position;
         itemEvent.spriteObj.gameObject.SetActive(true);
@@ -58,6 +63,8 @@ public class AudiovisualRoomLightEvent : DefaultEvent
         chaser.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(1.5f);
+
+        EventManager.instance.switches[(int)SwitchType.AudiovisualRoomLightEvent] = true;
 
         theEvent.isEventIng = false;
         thePlayer.IsPause = false;

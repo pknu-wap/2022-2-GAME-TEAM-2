@@ -41,7 +41,8 @@ public class Menu : MonoBehaviour
 
     private void Update()
     {
-        if (otherActivated || theEvent.isEventIng || DialogueManager.instance.talking || ChoiceManager.instance.choiceIng) return;
+        if (otherActivated || theEvent.isEventIng || DialogueManager.instance.talking || ChoiceManager.instance.choiceIng
+            || SpawnManager.instance.chase) return;
         if (Input.GetKeyDown(KeyCode.X))
         {
             menuActivated = !menuActivated;
@@ -105,6 +106,8 @@ public class Menu : MonoBehaviour
             else
             {
                 PlayerController.instance.transform.position = new Vector2(-10f, 1.5f);
+                theAudio.StopBGM();
+                theAudio.PlayBGM("Title");
                 SceneManager.LoadScene("Title");
             }
         }

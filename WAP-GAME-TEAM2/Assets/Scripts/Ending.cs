@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
@@ -26,9 +27,13 @@ public class Ending : MonoBehaviour
     public SwitchType trueEnd;
     void Start()
     {
+        FadeManager.instance.FadeIn();
+        PlayerController.instance.isSceneChange = false;
         theEvent = EventManager.instance;
         theAudio = AudioManager.instance;
         theDial = DialogueManager.instance;
+
+        theAudio.StopBGM();
 
         if (theEvent.switches[(int)trueEnd])
             StartCoroutine(TrueEndCoroutine());
@@ -39,7 +44,8 @@ public class Ending : MonoBehaviour
 
     IEnumerator BadEndCoroutine()
     {
-        yield return new WaitForSeconds(2f);
+        theEvent.SetEvent(true);
+        yield return new WaitForSeconds(4f);
         theDial.ShowText(BadEndDials);
         yield return new WaitUntil(() => theDial.nextDialogue);
         theAudio.PlaySFX(fallDownSound);
@@ -48,21 +54,25 @@ public class Ending : MonoBehaviour
         yield return new WaitForSeconds(7.5f);
         theDial.ShowText(afterBadEndingDials);
         yield return new WaitUntil(() => theDial.nextDialogue);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
+        theEvent.SetEvent(false);
+        theAudio.PlayBGM("Title");
+        SceneManager.LoadScene("Title");
     }
     
     IEnumerator TrueEndCoroutine()
     {
+        theEvent.SetEvent(true);
         for (int i = 0; i < 2; i++)
         {
             theDial.ShowText(TrueEndDials[i]);
             yield return new WaitUntil(() => theDial.nextDialogue);
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         theAudio.PlaySFX(doorOpenSound);
         yield return new WaitForSeconds(2f);
         theAudio.PlayBGM(trueEndBGM);
-        for (int i = 2; i < TrueEndDials[i].Length; i++)
+        for (int i = 2; i < TrueEndDials.Length; i++)
         {
             theDial.ShowText(TrueEndDials[i]);
             yield return new WaitUntil(() => theDial.nextDialogue);
@@ -73,6 +83,8 @@ public class Ending : MonoBehaviour
         yield return new WaitForSeconds(7.5f);
         theDial.ShowText(afterTrueEndingDials);
         yield return new WaitUntil(() => theDial.nextDialogue);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
+        theEvent.SetEvent(false);
+        SceneManager.LoadScene("Title");
     }
 }

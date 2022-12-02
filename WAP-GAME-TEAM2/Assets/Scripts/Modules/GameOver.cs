@@ -35,10 +35,11 @@ public class GameOver : MonoBehaviour
     public void Gameover()
     {
         PlayerController.instance.flashLight.intensity = 0f;
-        PlayerController.instance.IsPause = true;
+        EventManager.instance.SetEvent(true);
 
-        Menu.instance.otherActivated = true;
+        SpawnManager.instance.chase = false;
 
+        AudioManager.instance.StopChaseBGM();
         AudioManager.instance.StopBGM();
 
         gameoverAnim.SetBool("gameover", true);

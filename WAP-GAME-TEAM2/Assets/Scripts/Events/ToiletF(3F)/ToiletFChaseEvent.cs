@@ -33,9 +33,9 @@ public class ToiletFChaseEvent : DefaultEvent
         theEvent.isEventIng = true;
         thePlayer.IsPause = true;
 
+        SpawnManager.instance.sceneName = "ToiletF(3F)";
         SpawnManager.instance.StartChase(chaser);
         SpawnManager.instance.chaserNumber = 2;
-        chaser.SetNodeArray();
 
         AudioManager.instance.PlaySFX(surpriseSound);
         thePlayer.SetBalloonAnim();
@@ -67,7 +67,7 @@ public class ToiletFChaseEvent : DefaultEvent
         theEvent.isEventIng = false;
         thePlayer.IsPause = false;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
 
         chaser.chase = true;
 

@@ -27,6 +27,8 @@ public class PipePuzzle : MonoBehaviour
     public string DoorOpenSound;
 
     public string[] Dial;
+
+    public GameObject EventObj;
     void OnEnable()
     {
         theEvent = EventManager.instance;
@@ -136,5 +138,6 @@ public class PipePuzzle : MonoBehaviour
         DialogueManager.instance.ShowText(Dial[1]);
         theEvent.isEventIng = false;
         gameObject.SetActive(false);
+        EventObj.SetActive(false);
     }
 }

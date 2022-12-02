@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+
 
 public class Title : MonoBehaviour
 {
@@ -15,20 +17,33 @@ public class Title : MonoBehaviour
         theAudio = AudioManager.instance;
 
         PlayerController.instance.transform.position = new Vector2(-10f, 1.5f);
-        PlayerController.instance.flashLight.intensity = 0.5f;
-        PlayerController.instance.IsPause = false;
-        Menu.instance.otherActivated = false;
+        PlayerController.instance.flashLight.intensity = 1f;
+        EventManager.instance.SetEvent(false);
+
+        Screen.SetResolution(Screen.width, (Screen.width * 4) / 3, true);
     }
 
     public void NewGame()
     {
+        newGameInit();
         StartCoroutine(NewGameCoroutine());
     }
 
     public void LoadGame()
     {
-        SLManager.instance.Load();
-        StartCoroutine(LoadCoroutine());
+        string path = Application.dataPath + "/Save.json";
+        if (File.Exists(path))
+        {
+            LoadGameInit();
+            AudioManager.instance.StopBGM();
+            SLManager.instance.Load();
+            StartCoroutine(LoadCoroutine());
+        }
+        else
+        {
+            AudioManager.instance.PlaySFX("Wrong");
+        }
+        
     }
 
     public void ExitGame()
@@ -51,6 +66,7 @@ public class Title : MonoBehaviour
         theAudio.PlaySFX("Cursor");
         theFade.FadeOut(0.05f);
         theAudio.StopBGM();
+        PlayerController.instance.flashLight.intensity = 0f;
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("3-1");
     }
@@ -62,5 +78,20 @@ public class Title : MonoBehaviour
         yield return new WaitForSeconds(1f);
         AudioManager.instance.PlayBGM(AudioManager.instance.nowPlayBGM);
         SceneManager.LoadScene(SLManager.instance.sceneName);
+    }
+
+    private void newGameInit()
+    {
+        EventManager.instance.ClearLibraryLists();
+        EventManager.instance.ClearSwitches();
+        InventoryManager.instance.ClearItem();
+        PlayerController.instance.flashLight.intensity = 0f;
+    } 
+    private void LoadGameInit()
+    {
+        EventManager.instance.ClearLibraryLists();
+        EventManager.instance.ClearSwitches();
+        InventoryManager.instance.ClearItem();
+        PlayerController.instance.flashLight.intensity = 1f;
     }
 }

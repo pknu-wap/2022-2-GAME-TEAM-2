@@ -17,7 +17,7 @@ public class MyPiano : MonoBehaviour
     private void OnEnable()
     {
         nowIndex = 0;
-        maxIndex = 1;
+        maxIndex = 25;
         PlayerController.instance.IsPause = true;
     }
 

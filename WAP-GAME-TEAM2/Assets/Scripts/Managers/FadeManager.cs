@@ -59,4 +59,5 @@ public class FadeManager : MonoBehaviour
             yield return waitTime;
         }
     }
+
 }

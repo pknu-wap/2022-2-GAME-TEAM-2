@@ -59,6 +59,21 @@ public enum SwitchType
     FurnishingRItemEvent,       // 비품실 나무 판자 획득
     BadEnding,                  // 배드 엔딩
     TrueEnding,                 // 진엔딩
+    ChaseEvent4F,               // 4층 추격 이벤트
+    Diary0607,                  // 방송실 앞 일기장 이벤트
+    Diary0509,                  // 화장실 일기장 이벤트
+    ChaseEvent2F,               // 2층 추격 이벤트
+    BookCollectEvent,           // 책 수집 이벤트
+    BookEvent221,               // 2 - 2 책수집1
+    BookEvent222,               // 2 - 2 책수집2
+    BookEvent11,               // 1 - 1 책수집
+    BookEvent21,               // 2 - 1 책수집
+    BookEvent31,               // 3 - 1 책수집
+    BookEvent32,               // 3 - 2 책수집
+    LibraryDoorOpend,          // 도서관 문열림
+    ExitKeyEvent,              // 출입문 키 이벤트
+    Diary1107,                 // 교장실 일기장
+    FurROpened,                 // 비품실 
 }
 
 // 게임에서 일어나는 이벤트를 관리해주는 클래스 (이벤트가 한번만 일어나게 하기 위함)
@@ -104,6 +119,19 @@ public class EventManager : MonoBehaviour
     {
         isEventIng = _b;
         PlayerController.instance.IsPause = _b;
+    }
+
+    public void ClearLibraryLists()
+    {
+        for (int i = 0; i < 9; i++)
+            libraryLists[i].Clear();
+    }
+    public void ClearSwitches()
+    {
+        for (int i = 0; i < switches.Length; i++)
+            switches[i] = false;
+        for (int i = 0; i < diaryObtained.Length; i++) 
+            diaryObtained[i] = false;
     }
     
 }

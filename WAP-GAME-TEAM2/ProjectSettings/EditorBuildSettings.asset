@@ -9,17 +9,47 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: a335708d08409bb44b4b538c382cbffc
   - enabled: 1
+    path: Assets/Scenes/1-1.unity
+    guid: e2e1f1e08b7517849bd290c376d5cf52
+  - enabled: 1
+    path: Assets/Scenes/1-2.unity
+    guid: b9d186557d1da5d4ca103e76f1196176
+  - enabled: 1
+    path: Assets/Scenes/1Floor.unity
+    guid: 0f26598fbd2d92f4d8b7ab94dfab7be1
+  - enabled: 1
+    path: Assets/Scenes/2-1.unity
+    guid: 058adc7687f6b8348bcdec9747724667
+  - enabled: 1
+    path: Assets/Scenes/2-2.unity
+    guid: fb26ca80d40b4ca4d829d3e802a8777d
+  - enabled: 1
+    path: Assets/Scenes/2FloorCenter.unity
+    guid: cd8d62ab52d564540bbe98468842ebf0
+  - enabled: 1
+    path: Assets/Scenes/2FloorLeft.unity
+    guid: 1ec03aa824dfbf34c8f14df2b6f63a8e
+  - enabled: 1
+    path: Assets/Scenes/2FloorRight.unity
+    guid: bd5f620ee4cad0a44b26e51877a02278
+  - enabled: 1
     path: Assets/Scenes/3-1.unity
     guid: d448200c0d65eac4895d653ae270940d
   - enabled: 1
     path: Assets/Scenes/3-2.unity
     guid: 23244f9d829aa964c961659960256f6c
   - enabled: 1
-    path: Assets/Scenes/ScienceRoom.unity
-    guid: 2f89d5ef0eee2bc4abdcc17e80e82fbd
+    path: Assets/Scenes/3Floor.unity
+    guid: 33aebed1f223a5f4c85939c40067c84e
+  - enabled: 1
+    path: Assets/Scenes/4Floor.unity
+    guid: 0814ed35c5321ef45b52c6e8c762e5fb
   - enabled: 1
     path: Assets/Scenes/ArtRoom.unity
     guid: 5ac03b807c18b6a4f8ddb178d4b07231
+  - enabled: 1
+    path: Assets/Scenes/AudiovisualRoom.unity
+    guid: 14b82553810cbc14498e6769f27dc0a4
   - enabled: 1
     path: Assets/Scenes/BroadcastR2.unity
     guid: 74e612fd9081aa049b766f9c4f9583dd
@@ -30,18 +60,36 @@ EditorBuildSettings:
     path: Assets/Scenes/ComputerRoom.unity
     guid: 20d14e24bcdddcd4d8f75594dcff3744
   - enabled: 1
+    path: Assets/Scenes/ComputerRoom_1.unity
+    guid: 25b42b78344cfc94ea52b2bd78e2151e
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: f89395da3a2dfc8488952aff38953b3d
+  - enabled: 1
+    path: Assets/Scenes/FurnishingRoom.unity
+    guid: fe07ab9d51d2e114b87379c61bbc47cc
+  - enabled: 1
+    path: Assets/Scenes/Library.unity
+    guid: 524b68cc7d118c04f83e62e3c4c5dba3
+  - enabled: 1
+    path: Assets/Scenes/MusicRoom.unity
+    guid: 77fad151649776543a6f3c7fbf8bf64a
+  - enabled: 1
+    path: Assets/Scenes/PrincipalOffice.unity
+    guid: 6a9531f18ddaeb140bfa0556ae3ef0d5
+  - enabled: 1
+    path: Assets/Scenes/ScienceRoom.unity
+    guid: 2f89d5ef0eee2bc4abdcc17e80e82fbd
+  - enabled: 1
+    path: Assets/Scenes/TeacherOffice.unity
+    guid: 6581ff6c4574870459f17985dc80b472
+  - enabled: 1
+    path: Assets/Scenes/ToiletF(3F).unity
+    guid: 10acc8159c1a222419a653df7be1d8cc
+  - enabled: 1
     path: Assets/Scenes/ToiletM(3F).unity
     guid: 7a344063619bd284f9bc967ad7040afb
   - enabled: 1
     path: Assets/Scenes/ToiletM(4F).unity
     guid: f611aa97aaccfc6488431e9ddd644ea9
-  - enabled: 1
-    path: Assets/Scenes/ToiletF(3F).unity
-    guid: 10acc8159c1a222419a653df7be1d8cc
-  - enabled: 1
-    path: Assets/Scenes/3Floor.unity
-    guid: 33aebed1f223a5f4c85939c40067c84e
-  - enabled: 1
-    path: Assets/Scenes/4Floor.unity
-    guid: 0814ed35c5321ef45b52c6e8c762e5fb
   m_configObjects: {}

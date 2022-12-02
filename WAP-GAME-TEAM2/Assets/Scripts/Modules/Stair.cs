@@ -19,7 +19,8 @@ public class Stair : MonoBehaviour
     
     protected virtual void Update()
     {
-        if (!isCollision || DialogueManager.instance.talking) return;
+        if (!isCollision || DialogueManager.instance.talking || Menu.instance.menuActivated
+            || Menu.instance.otherActivated) return;
         
         float dirValue = PlayerController.instance.GetPlayerDir(dir);
         if (dirValue != val) return;
@@ -31,6 +32,9 @@ public class Stair : MonoBehaviour
     
     protected virtual IEnumerator MoveCo()
     {
+        if (SpawnManager.instance.chase)
+            SpawnManager.instance.spawnTarget.chase = false;
+        
         yield return new WaitUntil(() => DialogueManager.instance.nextDialogue == true);
         PlayerController.instance.IsPause = true;
         AudioManager.instance.PlaySFX(moveSound);
@@ -39,8 +43,22 @@ public class Stair : MonoBehaviour
         PlayerController.instance.transform.position = toMove;
         PlayerController.instance.isSceneChange = true;
         PlayerController.instance.SetPlayerDirAnim(dir, -val);
-        AudioManager.instance.StopBGM();
-        AudioManager.instance.PlayBGM(bgmToChange);
+        if (SpawnManager.instance.chase)
+        {
+            AudioManager.instance.PlayBGM(bgmToChange);
+            AudioManager.instance.StopBGM();
+        }
+        else 
+        {
+            AudioManager.instance.StopBGM();
+            AudioManager.instance.PlayBGM(bgmToChange);
+        }
+        
+        
+
+        SpawnManager.instance.spawnPoint = toMove;
+        SpawnManager.instance.sceneName = sceneName;
+
         SceneManager.LoadScene(sceneName);
     }
 

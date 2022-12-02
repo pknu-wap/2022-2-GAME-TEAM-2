@@ -89,7 +89,7 @@ public class AudioManager : MonoBehaviour
             sounds[i].SetSource(soundObject.AddComponent<AudioSource>());
             soundObject.transform.SetParent(this.transform);
         }
-        //PlayBGM("Title");
+        PlayBGM("Title");
     }
 
     public void PlayBGM(string _name)
@@ -109,7 +109,12 @@ public class AudioManager : MonoBehaviour
         nowPlayBGM = index;
         sounds[index].Play();
     }
-    
+
+    public void PlayBGM()
+    {
+        sounds[nowPlayBGM].Play();
+    }
+
     public void PlaySFX(string _name)
     {
         for(int i = 0; i < sounds.Length; i++)
@@ -162,6 +167,12 @@ public class AudioManager : MonoBehaviour
     public void StopBGM()
     {
         sounds[nowPlayBGM].Stop();
+    }
+    
+    public void StopChaseBGM()
+    {
+        sounds[chaseBGM].Stop();
+        sounds[nowPlayBGM].Play();
     }
 
     public void PlayChaseBGM()

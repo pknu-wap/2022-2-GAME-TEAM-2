@@ -55,8 +55,8 @@ public class ChaseEvent1F: DefaultEvent
             yield return new WaitForSeconds(1f);
             chaser.chase = true;
 
-
             EventManager.instance.switches[(int)SwitchType.ChaseEvent1F] = true;
+
 
             gameObject.SetActive(false);
         }

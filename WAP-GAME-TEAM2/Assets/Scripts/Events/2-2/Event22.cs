@@ -32,6 +32,7 @@ public class Event22 : DefaultEvent
 
             if (ChoiceManager.instance.SelectedNum == 0)
             {
+                InventoryManager.instance.DeleteItem("과산화수소");
                 theEvent.switches[(int)SwitchType.Event22] = true;
                 FadeManager.instance.FadeOut();
                 theSR.sprite = null;

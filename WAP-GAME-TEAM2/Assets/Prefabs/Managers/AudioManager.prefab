@@ -59,7 +59,7 @@ MonoBehaviour:
   - name: Cursor
     clip: {fileID: 8300000, guid: a278d33744a099b4693d01b38c2004e6, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
   - name: "\uC885\uC18C\uB9AC"
     clip: {fileID: 8300000, guid: 42d014e6bdfe34a4e9dd4bbb7281faad, type: 3}
@@ -85,6 +85,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a60aef81fbf705143abf7d5e7b894d8d, type: 3}
     volume: 0.5
     pitch: 0.95
+    loop: 1
+  - name: 2Floor
+    clip: {fileID: 8300000, guid: f076f98acb32c614f89379323d7ab935, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: 1Floor
+    clip: {fileID: 8300000, guid: 34a06f4f893d0be4cad46172ae7d76ba, type: 3}
+    volume: 1
+    pitch: 1
     loop: 1
   - name: Footstep1
     clip: {fileID: 8300000, guid: 73be59b4e86e87b4b8d59f017fc92eba, type: 3}
@@ -306,8 +316,43 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: "\uADC0\uC2E0\uC18C\uB9AC2"
+    clip: {fileID: 8300000, guid: a47fcf5d1924b2c4bb368005216c9ec4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uBE44\uBA85"
+    clip: {fileID: 8300000, guid: 6e64fc6a06890324fa469d2bbb38794e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC2DC\uCCAD\uAC01\uC2E4\uCD94\uACA9"
+    clip: {fileID: 8300000, guid: d46b1c94bc4f97f46a5d2699884454fd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uCDA9\uB3CC"
+    clip: {fileID: 8300000, guid: 6ac56616142f10549a348e774c924cc9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC9C4\uC5D4\uB529"
+    clip: {fileID: 8300000, guid: 6b7af28330fbbe94ebe6b126acf99d99, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: "\uCCA0\uBB38"
+    clip: {fileID: 8300000, guid: c4596a14ce745354db33be95a92765e9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: "\uC4F0\uB7EC\uC9D0"
+    clip: {fileID: 8300000, guid: 419be9c1652eb344dba3d29219f12805, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   nowPlayBGM: 0
-  chaseBGM: 0
+  chaseBGM: 1
 --- !u!81 &8282243632900502260
 AudioListener:
   m_ObjectHideFlags: 0

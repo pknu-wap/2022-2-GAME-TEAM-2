@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb65a6b4f4461544a81e4938c287ae83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.04
-  walkCount: 25
+  speed: 0.05
+  walkCount: 20
   animator: {fileID: 319763219115364084}
   boxCollider: {fileID: 319763219115364085}
   layerMask:

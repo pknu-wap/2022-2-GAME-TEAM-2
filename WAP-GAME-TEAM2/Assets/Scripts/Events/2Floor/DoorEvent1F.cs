@@ -124,6 +124,7 @@ public class DoorEvent1F : MonoBehaviour
             yield return new WaitUntil(() => !theChoice.choiceIng);
             if (theChoice.SelectedNum == 0)
             {
+                theInven.DeleteItem("칼");
                 theAudio.PlaySFX(knifeSound);
                 FadeManager.instance.FadeOut();
                 yield return new WaitForSeconds(1f);

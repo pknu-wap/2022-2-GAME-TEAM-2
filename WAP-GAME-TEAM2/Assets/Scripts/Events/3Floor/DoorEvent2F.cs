@@ -30,6 +30,7 @@ public class DoorEvent2F : DefaultEvent
         theEvent.isEventIng = true;
         PlayerController.instance.IsPause = true;
         theEvent.switches[(int)switchType] = true;
+        InventoryManager.instance.DeleteItem(keyName);
         DialogueManager.instance.ShowText(doorEventDial);
         yield return new WaitUntil(() => DialogueManager.instance.nextDialogue == true);
         

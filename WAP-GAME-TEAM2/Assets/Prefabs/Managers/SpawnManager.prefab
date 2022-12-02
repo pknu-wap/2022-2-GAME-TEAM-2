@@ -49,4 +49,4 @@ MonoBehaviour:
   spawnTarget: {fileID: 0}
   chaserNumber: 0
   chase: 0
-  chaseTime: 20
+  chaseTime: 10

@@ -76,7 +76,7 @@ MonoBehaviour:
   isExtraEvent: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 128
   itemName: "\uC74C\uC545\uC2E4 \uC5F4\uC1E0"
   getSound: Detect
   getDial:

@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 66105588}
   - component: {fileID: 66105587}
   - component: {fileID: 66105586}
-  - component: {fileID: 66105585}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -142,22 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &66105585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66105584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c325540092efd7488c30a9cd0e3e061, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  fFollowSpeed: 2
-  isFollow: 1
-  _bound: {fileID: 0}
 --- !u!114 &66105586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +314,7 @@ MonoBehaviour:
   - "\uADF8 \uCE5C\uAD6C\uB294 \uC0B6\uC758 \uC758\uC9C0\uAC00 \uAC00\uB4DD\uD55C
     \uB208\uC744 \uD558\uBA70\n\uBAA8\uC2B5\uC744 \uBCF4\uC600\uB2E4."
   - '- True Ending-'
+  - WAP-GAME-TEAM2
   afterBadEndingDials:
   - "\uC74C..?"
   - "\uC5EC\uAE30\uB294..?"
@@ -339,15 +323,16 @@ MonoBehaviour:
   - "\uAFC8\uC774\uC600\uB098.. \uC815\uB9D0 \uAE30\uBD84\uC774 \uB354\uB7EC\uC6B4
     \uAFC8\uC774\uC600\uC5B4."
   - "\uB098\uB294 \uC544\uBB34\uB7F0 \uC0DD\uAC01\uC5C6\uC774 \uAC00\uBC29\uC744
-    \uC2F8\uACE0 \uD559\uAD50\uB97C \uBE60\uC838\uB098\uC654\uB2E4."
+    \uC2F8\uACE0 \uD559\uAD50\uB97C \uBE60\uC838\n\uB098\uC654\uB2E4."
   - "\uADF8\uB9AC\uACE0 \uB2E4\uC74C\uB0A0."
   - "\uD559\uAD50\uC5D0\uC11C \uC790\uC0B4 \uC18C\uC2DD\uC774 \uB4E4\uB824\uC654\uB2E4."
   - -Bad End -
+  - WAP-GAME-TEAM2
   bellSound: "\uC885\uC18C\uB9AC"
-  trueEndBGM: TrueEndBGM
-  fallDownSound: 
-  doorOpenSound: 
-  trueEnd: 40
+  trueEndBGM: "\uC9C4\uC5D4\uB529"
+  fallDownSound: "\uC4F0\uB7EC\uC9D0"
+  doorOpenSound: "\uCCA0\uBB38"
+  trueEnd: 53
 --- !u!1001 &304060829
 PrefabInstance:
   m_ObjectHideFlags: 0

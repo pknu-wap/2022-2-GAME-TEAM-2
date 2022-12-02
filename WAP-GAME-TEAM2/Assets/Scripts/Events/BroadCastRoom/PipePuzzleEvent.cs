@@ -9,7 +9,7 @@ public class PipePuzzleEvent : DefaultEvent
 
     protected override void SwitchCheck()
     {
-        if (EventManager.instance.switches[(int)SwitchType.BcDoorOpened])
+        if (EventManager.instance.switches[(int)SwitchType.StDoorOpened])
             gameObject.SetActive(false);
     }
 
@@ -18,6 +18,5 @@ public class PipePuzzleEvent : DefaultEvent
         yield return new WaitUntil(() => DialogueManager.instance.nextDialogue == true);
         theEvent.isEventIng = true;
         pipePuzzle.SetActive(true);
-        yield break;
     }
 }

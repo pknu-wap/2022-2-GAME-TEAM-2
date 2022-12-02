@@ -48,8 +48,15 @@ public class AudiovisualRoomChaseEvent : DefaultEvent
         theEvent.isEventIng = false;
         thePlayer.IsPause = false;
 
+        SpawnManager.instance.chase = true;
+
+        AudioManager.instance.StopBGM();
+        AudioManager.instance.PlayBGM("시청각실추격");
+
         chaser.gameObject.SetActive(true);
         chaser.chase = true;
+
+        EventManager.instance.switches[(int)SwitchType.AudiovisualRoomChaseEvent] = true;
 
         yield break;
     }

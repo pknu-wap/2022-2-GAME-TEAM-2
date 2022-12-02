@@ -185,22 +185,23 @@ public class AIController : MovingObject
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameOver.instance.Gameover();
+        if (collision.gameObject.CompareTag("Player") && !PlayerController.instance.isSceneChange)
+            GameOver.instance.Gameover();
     }
 
     void OnDrawGizmos()
     {
-        //Gizmos.color = Color.green;
-        //for (int i = 0; i < sizeX; i++)
-        //{
-        //    for (int j = 0; j < sizeY; j++)
-        //    {
-        //        if (NodeArray[i, j].isWall == false)
-        //        {
-        //            Gizmos.DrawCube(new Vector2(NodeArray[i, j].x, NodeArray[i, j].y), new Vector2(0.7f, 0.7f));
-        //        }
-        //    }
-        //}
+        Gizmos.color = Color.green;
+        for (int i = 0; i < sizeX; i++)
+        {
+            for (int j = 0; j < sizeY; j++)
+            {
+                if (NodeArray[i, j].isWall == false)
+                {
+                    Gizmos.DrawCube(new Vector2(NodeArray[i, j].x, NodeArray[i, j].y), new Vector2(0.7f, 0.7f));
+                }
+            }
+        }
 
         Gizmos.color = Color.red;
 

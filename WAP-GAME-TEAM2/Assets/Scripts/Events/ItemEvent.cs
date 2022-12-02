@@ -17,6 +17,7 @@ public class ItemEvent : MonoBehaviour
 
     public string itemName;
     public string getSound = "Detect";
+    [TextArea(1, 2)]
     public string[] getDial;
     
     public SwitchType ItemSwitch;
@@ -54,6 +55,12 @@ public class ItemEvent : MonoBehaviour
             PlayerController.instance.IsPause = true;
             StartCoroutine(ItemEventCo());
         }
+        else
+        {
+            if (spriteObj != null)
+                spriteObj.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
 
         if (spriteObj != null)
             spriteObj.gameObject.SetActive(false);
@@ -68,7 +75,8 @@ public class ItemEvent : MonoBehaviour
     {
         if (theEvent.switches[(int)ItemSwitch])
         {
-            spriteObj.SetActive(false);
+            if (spriteObj != null)
+                spriteObj.SetActive(false);
             gameObject.SetActive(false);
         }
     }

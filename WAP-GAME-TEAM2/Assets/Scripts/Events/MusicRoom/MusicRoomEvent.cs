@@ -51,6 +51,8 @@ public class MusicRoomEvent : DefaultEvent
             peoples[i].SetActive(true);
 
         StartCoroutine(myGlitch.MusicGlitchCo(glitchSounds));
+        CameraManager.instance.transform.position = new Vector3(0.45f, CameraManager.instance.transform.position.y
+            , CameraManager.instance.transform.position.z);
         while (CameraManager.instance.transform.position.y >= target_y)
         {
             float camYPos = CameraManager.instance.transform.position.y - (speed * Time.deltaTime);

@@ -66,7 +66,7 @@ public class SpawnManager : MonoBehaviour
         sceneTileDictionary.Add("TeacherOffice", (new Vector2(-6.5f, -4.5f), new Vector2(12.5f, 6.5f)));
         sceneTileDictionary.Add("PrincipalOffice", (new Vector2(-6.5f, -4.5f), new Vector2(-0.5f, 5.5f)));
 
-        sceneTileDictionary.Add("3Floor", (new Vector2(-13.5f, -6.5f), new Vector2(13.5f, 8.5f)));
+        sceneTileDictionary.Add("3Floor", (new Vector2(-13.5f, -6.5f), new Vector2(13.5f, 10.5f)));
         sceneTileDictionary.Add("ToiletF(3F)", (new Vector2(-5.5f, -4.5f), new Vector2(5.5f, 0.5f)));
         sceneTileDictionary.Add("ComputerRoom", (new Vector2(-7.5f, -4.5f), new Vector2(10.5f, 6.5f)));
         sceneTileDictionary.Add("2-1", (new Vector2(-7.5f, -4.5f), new Vector2(10.5f, 6.5f)));
@@ -77,6 +77,20 @@ public class SpawnManager : MonoBehaviour
         sceneTileDictionary.Add("Library", (new Vector2(-7.5f, 11.5f), new Vector2(6.5f, 6.5f)));
         sceneTileDictionary.Add("FurnishingRoom", (new Vector2(-4.5f, -3.5f), new Vector2(5.5f, 1.5f)));
 
+        sceneTileDictionary.Add("4Floor", (new Vector2(-13.5f, -21.5f), new Vector2(19.5f, 3.5f)));
+        sceneTileDictionary.Add("ScienceRoom", (new Vector2(-6.5f, -6.5f), new Vector2(5.5f, 2.5f)));
+        sceneTileDictionary.Add("3-1", (new Vector2(-6.5f, -8.5f), new Vector2(7.5f, 0.5f)));
+        sceneTileDictionary.Add("3-2", (new Vector2(-6.5f, -8.5f), new Vector2(7.5f, 0.5f)));
+        sceneTileDictionary.Add("ToiletM(4F)", (new Vector2(-4.5f, -5.5f), new Vector2(6.5f, 0.5f)));
+        sceneTileDictionary.Add("ArtRoom", (new Vector2(-7.5f, -6.5f), new Vector2(4.5f, 1.5f)));
+
+        sceneTileDictionary.Add("2FloorCenter", (new Vector2(-6.5f, 3.5f), new Vector2(7.5f, 10.5f)));
+        sceneTileDictionary.Add("2FloorLeft", (new Vector2(-3.5f, -5.5f), new Vector2(7.5f, 8.5f)));
+        sceneTileDictionary.Add("2FloorRight", (new Vector2(-2.5f, -5.5f), new Vector2(9.5f, 8.5f)));
+        sceneTileDictionary.Add("MusicRoom", (new Vector2(-4.5f, -7.5f), new Vector2(7.5f, 4.5f)));
+        sceneTileDictionary.Add("1-1", (new Vector2(-7.5f, -6.5f), new Vector2(4.5f, 2.5f)));
+        sceneTileDictionary.Add("1-2", (new Vector2(-7.5f, -6.5f), new Vector2(4.5f, 2.5f)));
+        sceneTileDictionary.Add("AudiovisualRoom", (new Vector2(-3.5f, -3.5f), new Vector2(5.5f, 10.5f)));
     }
 
     public void StartSpawnCoroutine()
@@ -87,15 +101,18 @@ public class SpawnManager : MonoBehaviour
     // 씬 이동마다 호출
     IEnumerator SpawnCoroutine()
     {
+
         if (!chase)
             yield break;
 
         if (chaseTimeOver)
         {
-            int rand = Random.Range(0, 3);
+            int rand = Random.Range(0, 2);
             if (rand == 0)
             {
                 chase = false;
+                AudioManager.instance.StopChaseBGM();
+                AudioManager.instance.PlayBGM();
                 yield break;
             }
         }
@@ -103,11 +120,11 @@ public class SpawnManager : MonoBehaviour
         GameObject spawnObject = GameObject.Find("Chasers");
         spawnTarget = spawnObject.transform.Find("Chaser" + chaserNumber.ToString()).gameObject.GetComponent<AIController>();
 
+        yield return new WaitForSeconds(1f);
+        AudioManager.instance.PlaySFX("DoorClose");
         spawnTarget.bottomLeft = sceneTileDictionary[sceneName].Item1;
         spawnTarget.topRight = sceneTileDictionary[sceneName].Item2;
         spawnTarget.transform.position = spawnPoint;
-
-        yield return new WaitForSeconds(2f);
 
         spawnTarget.gameObject.SetActive(true);
         spawnTarget.chase = true;
@@ -115,6 +132,7 @@ public class SpawnManager : MonoBehaviour
 
     public void StartChase(AIController _chaser)
     {
+        AudioManager.instance.PlayChaseBGM();
         chase = true;
         spawnTarget = _chaser;
         spawnTarget.bottomLeft = sceneTileDictionary[sceneName].Item1;

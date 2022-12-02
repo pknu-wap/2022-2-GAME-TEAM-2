@@ -33,14 +33,15 @@ public class InventoryManager : MonoBehaviour
         itemDictionary = new Dictionary<string, Item>();
         itemDictionaryInit();
         inventoryItemList = new List<Item>();
-        // GetItem("난장이가 쏘아올린 작은 공");
-        // GetItem("소시민");
-        // GetItem("윤동주 시집");
-        // GetItem("이육사 시집");
-        // GetItem("낙원구 행복동");
-        // GetItem("초식");
+        //GetItem("난장이가 쏘아올린 작은 공");
+        //GetItem("소시민");
+        //GetItem("윤동주 시집");
+        //GetItem("이육사 시집");
+        //GetItem("낙원구 행복동");
+        //GetItem("초식");
+       // GetItem("도서관 열쇠");
         //GetItem("나무 판자");
-        GetItem("칼");
+        //GetItem("칼");
     }
 
     private void itemDictionaryInit()
@@ -98,6 +99,11 @@ public class InventoryManager : MonoBehaviour
         if (inventoryItemList.Contains(itemDictionary[_itemName]))
             return true;
         return false;
+    }
+
+    public void ClearItem()
+    {
+        inventoryItemList.Clear();
     }
     
     

@@ -9,11 +9,11 @@ public class ObtainDiary : MonoBehaviour
     protected AudioManager theAudio;
 
     public GameObject spriteObj;
-    
+
     public bool isExtraEvent;
 
     public LayerMask layerMask;
-    
+
     public string getSound = "Detect";
     public string[] getDial;
 
@@ -24,8 +24,8 @@ public class ObtainDiary : MonoBehaviour
     public SwitchType DiarySwitch;
 
     private bool isCoroutine;
-    protected virtual IEnumerator DiaryEventCo() { yield break;}
-    
+    protected virtual IEnumerator DiaryEventCo() { yield break; }
+
     protected void Start()
     {
         theEvent = EventManager.instance;
@@ -43,9 +43,10 @@ public class ObtainDiary : MonoBehaviour
 
     protected virtual IEnumerator ObtainDiaryCo()
     {
-        
+
         if (DialogueManager.instance.talking || theEvent.switches[(int)DiarySwitch]
-                                             || theEvent.isEventIng)
+                                             || theEvent.isEventIng 
+                                             || theEvent.isWorking)
         {
             isCoroutine = false;
             yield break;
@@ -70,7 +71,8 @@ public class ObtainDiary : MonoBehaviour
             DialogueManager.instance.ShowText(getDial[i]);
             yield return new WaitUntil(() => theDial.nextDialogue);
         }
-        
+
+        theEvent.SetEvent(true);
         AudioManager.instance.PlaySFX(getSound); 
         DialogueManager.instance.ShowText(getDial[len - 1]);
         theEvent.diaryObtained[diaryNum] = true;
@@ -81,7 +83,8 @@ public class ObtainDiary : MonoBehaviour
         diaryObj.SetActive(true);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z));
         diaryObj.SetActive(false);
-        
+        theEvent.SetEvent(false);
+
         if (isExtraEvent)
         {
             theEvent.SetEvent(true);
@@ -103,7 +106,8 @@ public class ObtainDiary : MonoBehaviour
     {
         if (theEvent.switches[(int)DiarySwitch])
         {
-            spriteObj.SetActive(false);
+            if (spriteObj != null)
+                spriteObj.gameObject.SetActive(false);
             gameObject.SetActive(false); 
         }
     }

@@ -26,6 +26,7 @@ public class BroadCastDoor : Door
         // 문 스프라이트 변경
         if (doorOpened)
         {
+            playerLight = PlayerController.instance.flashLight.gameObject;
             foreach (var t in OpenedDoor)
                 t.SetActive(true);
         }
