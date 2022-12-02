@@ -91,7 +91,7 @@ public class PipePuzzle : MonoBehaviour
             AudioManager.instance.PlaySFX(rotateSound);
             curAngleIdx[curSelectIdx] = (curAngleIdx[curSelectIdx] + 1) % 4;
             tiles[curSelectIdx].eulerAngles = new Vector3(0.0f, tiles[curSelectIdx].eulerAngles.y, angle[curAngleIdx[curSelectIdx]]);
-            if (true)//(CheckResult())
+            if ((CheckResult())
             {
                 theEvent.switches[(int)SwitchType.StDoorOpened] = true;
                 door.DoorOpen();
